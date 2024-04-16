@@ -1,0 +1,17 @@
+footer {
+    position: fixed;
+    margin: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width:100%;
+    background-color: #d1963a; 
+    padding: 20px; 
+    color: #394726;
+  }
+  
+  .social-media-icon {
+    width: 30px;
+    height: auto; 
+    margin-right: 10px; 
+  }
