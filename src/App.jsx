@@ -17,7 +17,7 @@ function App() {
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/:postId" element= {<PostPage/>} />
+        <Route path="/post/:postId" element= {<PostPage/>} />
       </Routes>
       <Footer />
     </div>

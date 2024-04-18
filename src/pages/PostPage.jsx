@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import postService from "../services/Post.service";
+//import postService from "../services/Post.service";
 
 const API_URL = "http://localhost:5005";
 

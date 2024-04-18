@@ -19,27 +19,27 @@ class PostService {
     });
   }
  
-  // POST /api/projects
+  // POST /api/post
   createPost = requestBody => {
     return this.api.post('/api/post', requestBody);
   };
  
-  // GET /api/projects
+  // GET /api/post
   getAllPosts = () => {
     return this.api.get('/api/post');
   };
  
-  // GET /api/projects/:id
+  // GET /api/post/:id
   getPost = id => {
     return this.api.get(`/api/post/${id}`);
   };
  
-  // PUT /api/projects/:id
+  // PUT /api/post/:id
   updatePost = (id, requestBody) => {
     return this.api.put(`/api/post/${id}`, requestBody);
   };
  
-  // DELETE /api/projects/:id
+  // DELETE /api/posts/:id
   deleteProject = id => {
     return this.api.delete(`/api/post/${id}`);
   };
