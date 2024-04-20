@@ -40,7 +40,7 @@ class PostService {
   };
  
   // DELETE /api/posts/:id
-  deleteProject = id => {
+  deletePost = id => {
     return this.api.delete(`/api/post/${id}`);
   };
 }

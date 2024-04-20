@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/PostCard.css";
-import { FaLocationArrow } from "react-icons/fa";
+import { FaLocationArrow,  } from "react-icons/fa";
 
 function PostCard({ title, description, _id, price, user, service }) {
   return (

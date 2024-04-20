@@ -2,43 +2,68 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-//import postService from "../services/Post.service";
+import postService from "../services/Post.service";
+import { FaLocationArrow, FaHeart } from "react-icons/fa";
+import "../styles/PostDetailPage.css";
 
 const API_URL = "http://localhost:5005";
 
 function PostPage(props) {
   const [post, setPost] = useState(null);
   const { postId } = useParams();
+  const [count, setCount] = useState(0);
+  const [liked, setLiked] = useState(false);
 
-  const getPost= ()=>{
-    const token= localStorage.getItem('authToken')
-    postService.getPost(postId)
-    .then((response)=>{
-        const onePost = response.data;
-        setPost(onePost)
-    })
-    .catch((err)=>{
-        console.log(err)
-    })
+  function increaseRate() {
+    setLiked(true);
+    setCount((prevCount) => {
+      return prevCount + 1;
+      
+    });
   }
+  const getPost = () => {
+    const token = localStorage.getItem("authToken");
+    postService
+      .getPost(postId)
+      .then((response) => {
+        const onePost = response.data;
+        setPost(onePost);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
-  useEffect(()=>{
-    getPost()
+  useEffect(() => {
+    getPost();
   }, []);
 
   return (
     <div className="PostDetails">
-    {post && (
+      {post && (
         <>
-        <h1>{post.title}</h1>
-        <h2>{post.service}</h2>
-        <p>{post.description}</p>
-        <p>{post.price}</p>
-        <h3>{post.user.name}</h3>
+          <h1 className="title">{post.title}</h1>
+          <h2 className="user-name">{post.user.name}</h2>
+          <h2 className="category">{post.service.category}</h2>
+          <h3 className="subcategory">{post.service.subcategory}</h3>
+          <p className="description">{post.description}</p>
+          <div className="location-container">
+            <FaLocationArrow className="location-icon"></FaLocationArrow>
+            <h3 className="location">{post.user.location}</h3>
+          </div>
+          <h3 className="price">{post.price} €/hour</h3>
+          <button
+            className={liked ? "button-like clicked" : "button-like"}
+            onClick={increaseRate}
+            disabled={liked}
+          >
+            <FaHeart></FaHeart>
+            <span>Like</span>
+          </button>
         </>
-    )}
+      )}
     </div>
-  )
+  );
 }
 
 export default PostPage;
