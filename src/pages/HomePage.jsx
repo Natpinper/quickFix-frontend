@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import postService from '../services/Post.service'
 import PostCard from "../components/PostCard"
 import SearchBar from '../components/SearchBar'
+import "../styles/HomePage.css"
 
 
 const API_URL = "http://localhost:5005"
@@ -22,7 +23,7 @@ function HomePage() {
   },[]); 
 
   return (
-    <div>
+    <div className='homepage-container'>
     <SearchBar/>
     <div className='PostList'>
     

@@ -1,0 +1,83 @@
+.Post-Card {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 20px;
+    margin: 20px 10px 20px 20px;
+    color: #394726;
+    width: calc(32.5% - 20px);
+    height: 500px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y :scroll;
+  }
+
+  .card-image {
+    width: 100%; /* Ensure image takes up full width */
+    height: 150px; /* Set the height of the image container */
+    overflow: hidden; /* Hide any overflow */
+    border-radius: 6px 6px 0 0; /* Ensure rounded corners on the top */
+   
+  }
+
+  .card-image img {
+    width: 100%; /* Ensure image fills its container */
+    height: 100%; /* Ensure image fills its container */
+    object-fit: cover; /* Ensure the image covers the container */
+  }
+
+.link {
+  text-decoration: none;
+  color: #955621;
+}
+
+.link:hover {
+  color: #394726;
+}
+
+.title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #955621;
+}
+
+.user-name {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.category {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+.subcategory {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+.location {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.description {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.location-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: center;
+}
+
+/*<div className="card-image">
+      <img src="./images/childcare.jpg" alt="Childcare" />
+      </div>*/

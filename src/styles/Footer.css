@@ -8,10 +8,12 @@ footer {
     background-color: #d1963a; 
     padding: 20px; 
     color: #394726;
+    z-index: 1000;
+    height: 11%;
   }
   
-  .social-media-icon {
-    width: 30px;
-    height: auto; 
-    margin-right: 10px; 
+  .social-media-icons{
+    font-size: 25px;
   }
+
+  

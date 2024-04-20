@@ -1,13 +1,14 @@
 import React from "react";
 import "../styles/Footer.css"
+import { FaFacebook , FaInstagram, FaWhatsapp} from "react-icons/fa";
 function Footer() {
 
   return (
     <footer>
     <div className="social-media-container">
-      <img className="social-media-icon" src="./images/facebook.png" alt="Facebook" />
-      <img className="social-media-icon" src="./images/instagram.png" alt="Instagram" />
-      <img className="social-media-icon" src="./images/whatsapp.png" alt="Whatsapp" />
+    <FaFacebook className="social-media-icons"></FaFacebook>
+    <FaInstagram className="social-media-icons"></FaInstagram>
+    <FaWhatsapp className="social-media-icons"></FaWhatsapp>
     </div>
     <p>Natalia Pinto</p>
     <p>WD IRONHACK 2024</p>
