@@ -1,3 +1,51 @@
-#About{
-   margin: 0;
+.About{
+   width: 100%;
+   margin-top: 1000px;
+   margin-bottom: 150px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;    
+	line-height:1.4;
+	margin-left:0;
+	margin-right:0;
+	text-align: center;
+}
+
+.About-us{
+   width: 60%;
+}
+.Users-reviews{
+   width: 100%;
+}
+
+.reviewspng{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 0px;
+  
+}
+
+.Review1{
+   width: 570px;
+   height: auto;
+   padding: 10px;
+   margin-right: 30%;
+  
+}
+
+.Review2{
+   width: 500px;
+   height: auto;
+   padding: 10px;
+   margin-left: 30%;
+
+}
+.Review3{
+   width: 500px;
+   height: auto;
+   padding: 10px;
+   margin-right: 30%;
+  
 }
