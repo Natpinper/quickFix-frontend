@@ -7,6 +7,8 @@ import LogIn from "./pages/LogIn";
 import Register from "./pages/Register";
 import Footer from "./components/Footer";
 import PostPage from "./pages/PostPage";
+import MyProfile from "./pages/MyProfile";
+import SignUpPage from "./pages/SignUpPage";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         <Route path="/login" element={<LogIn />} />
         <Route path="/register" element={<Register />} />
         <Route path="/post/:postId" element= {<PostPage/>} />
+        <Route path="/user/:userId" element={<MyProfile/>} />
+        <Route path="/signup" element={<SignUpPage/>}/>
       </Routes>
       <Footer />
     </div>
