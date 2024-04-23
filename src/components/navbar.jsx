@@ -5,7 +5,8 @@ import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from "../context/auth.context";
 function Navbar() {
 
-  const {isLoggedIn, user} =useContext(AuthContext)
+  const {isLoggedIn, user, logOut} = useContext(AuthContext)
+
     return (
        <nav className="navbar"> 
        <div className="navbar-right">
@@ -28,7 +29,8 @@ function Navbar() {
       <Link to="/profile">
       <button>My Profile</button>
       </Link>
-      <button className="user-logout">Logout</button>
+      <button onClick={logOut} className="user-logout">Logout</button>
+      <span>{user && user.name}</span>
       </div>
     )}
      
