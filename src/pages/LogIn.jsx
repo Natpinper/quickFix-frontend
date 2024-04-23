@@ -12,6 +12,8 @@ function LogIn(props) {
 
   const navigate = useNavigate();
 
+  const {storeToken} =useContext(AuthContext)
+
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
@@ -22,6 +24,9 @@ function LogIn(props) {
     axios.post(`${API_URL}/auth/login`, requestBody)
     .then((response)=>{
       console.log('JWT token', response.data.authToken )
+
+      storeToken(response.data.authToken)
+      
       navigate("/")
     })
     .catch((error)=>{
