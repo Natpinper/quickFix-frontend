@@ -27,7 +27,7 @@ nav button {
 }
 
 .user-icon{
-  font-size: 25px;
+  font-size: 35px;
 }
 
 .navbar-left{
@@ -45,11 +45,24 @@ nav button {
 }
 
 .logo{
-  width: 100px;
+  width: 110px;
   height: auto; 
 
 }
 
 .user-logout{
   font-size: 25px;
+}
+
+.user-logout{
+  background-color: #d1963a;
+  color: #394726;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 530;
+}
+
+.sign-out-icon{
+  font-size: 35px;
 }

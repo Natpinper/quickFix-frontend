@@ -10,7 +10,7 @@ function PostCard({ title, description, _id, price, user, service }) {
       <Link className="link" to={`/post/${_id}`}>
         <h1 className="title">{title}</h1>
       </Link>
-      <Link className="link" to={`/user/${_id}`}>
+      <Link className="link" to={`/user/${user._id}`}>
         <h2 className="user-name">{user.name}</h2>
       </Link>
       <h2 className="category">{service.category}</h2>

@@ -1,8 +1,9 @@
 import React from 'react'
-
 function MyProfile() {
+
+
   return (
-    <div>
+    <div className='My-Profile-container'>
       
     </div>
   )

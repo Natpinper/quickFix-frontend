@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/navbar.css"
 import { useContext } from "react";
-import { FaUserCircle } from "react-icons/fa";
+import { FaUserCircle, FaSignOutAlt } from "react-icons/fa";
 import { AuthContext } from "../context/auth.context";
 function Navbar() {
 
@@ -26,11 +26,13 @@ function Navbar() {
     )}
     {isLoggedIn && (
       <div className="navbar-left">
+      <Link to="/about-us">
+        <button>About Us</button>
+      </Link> 
       <Link to="/profile">
       <button>My Profile</button>
       </Link>
-      <button onClick={logOut} className="user-logout">Logout</button>
-      <span>{user && user.name}</span>
+      <button onClick={logOut} className="user-logout"><FaSignOutAlt className="sign-out-icon"></FaSignOutAlt></button>
       </div>
     )}
      

@@ -22,7 +22,6 @@ function PostPage(props) {
     });
   }
   const getPost = () => {
-    const token = localStorage.getItem("authToken");
     postService
       .getPost(postId)
       .then((response) => {
@@ -43,7 +42,7 @@ function PostPage(props) {
       {post && (
         <>
           <h1 className="title">{post.title}</h1>
-          <h2 className="user-name">{post.user.name}</h2>
+          <Link to={`/user/${post.user._id}`}><h2 className="user-name">{post.user.name}</h2></Link>
           <h2 className="category">{post.service.category}</h2>
           <h3 className="subcategory">{post.service.subcategory}</h3>
           <p className="description">{post.description}</p>

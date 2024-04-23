@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
+import authService from "../services/auth.service";
 
 const API_URL = "http://localhost:5005";
 function LogIn(props) {
@@ -9,7 +10,6 @@ function LogIn(props) {
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
-  const { authenticateUser } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
@@ -22,10 +22,9 @@ function LogIn(props) {
     e.preventDefault()
     const requestBody = { email, password }
 
-    axios.post(`${API_URL}/auth/login`, requestBody)
+    authService.login(requestBody)
     .then((response)=>{
       console.log('JWT token', response.data.authToken )
-
       storeToken(response.data.authToken)
       authenticateUser()
       navigate("/")
@@ -50,7 +49,7 @@ function LogIn(props) {
         <button type="submit">Login</button>
       </form>
 
-      {errorMessage && <p className="error-messag">{errorMessage}</p>}
+      {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <p>Don´t have an account yet?</p>
       <Link to={"/signup"}>Sign Up</Link>
