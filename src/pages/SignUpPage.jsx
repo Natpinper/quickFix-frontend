@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 const API_URL = "http://localhost:5005";
 
-function SignUpPage() {
+function SignUpPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -19,18 +20,20 @@ function SignUpPage() {
   const handleLocation = (e) => setLocation(e.target.value);
 
   const handleSignup = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    const requestBody = {email, password, name, location}
+    const newUser = { email, password, name, location };
 
-    axios.post(`${API_URL}/auth/signup`, requestBody)
-    .then((response)=>{
-        navigate('/login')
-    })
-    .catch((error)=>{
-        const errorDescription = error.response.data.message
-        setErrorMessage(errorDescription)
-    })
+    axios
+      .post(`${API_URL}/auth/signup`, newUser)
+      .then((createdUser) => {
+        navigate("/login");
+        console.log(createdUser);
+      })
+      .catch((error) => {
+        const errorDescription = error.response.data.message;
+        setErrorMessage(errorDescription);
+      });
   };
 
   return (
@@ -39,27 +42,43 @@ function SignUpPage() {
 
       <form onSubmit={handleSignup}>
         <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
-       
+        <input
+          required={true}
+          type="email"
+          name="email"
+          value={email}
+          onChange={handleEmail}
+        />
+
         <label>Password:</label>
         <input
+          required={true}
+          minLength={6}
           type="password"
           name="password"
           value={password}
           onChange={handlePassword}
         />
-        
+
         <label>Name:</label>
-        <input type="text" name="name" value={name} onChange={handleName} />
+        <input
+          required={true}
+          type="text"
+          name="name"
+          value={name}
+          onChange={handleName}
+        />
 
         <label>Location:</label>
         <input
+          required={true}
           type="text"
           name="location"
           value={location}
           onChange={handleLocation}
         />
       </form>
+      <button type="submit">Sign Up</button>
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 

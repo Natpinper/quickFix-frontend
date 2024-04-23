@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
+import axios from "axios";
+import { AuthContext } from "../context/auth.context";
 const API_URL = "http://localhost:5005";
 function LogIn(props) {
   const [email, setEmail] = useState("");
@@ -14,7 +15,20 @@ function LogIn(props) {
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
 
-  const handleLogin = (e) => {};
+  const handleLogin = (e) => {
+    e.preventDefault()
+    const requestBody = { email, password }
+
+    axios.post(`${API_URL}/auth/login`, requestBody)
+    .then((response)=>{
+      console.log('JWT token', response.data.authToken )
+      navigate("/")
+    })
+    .catch((error)=>{
+      const errorDescription = error.response.data.errorMessage
+      setErrorMessage(errorDescription)
+    })
+  };
 
   return (
     <div className="LoginPageContainer">
@@ -24,7 +38,7 @@ function LogIn(props) {
         <label>Email:</label>
         <input type="email" name="email" value={email} onChange={handleEmail} />
 
-        <label>Email:</label>
+        <label>Password:</label>
         <input type="password" name="password" value={password} onChange={handlePassword} />
 
         <button type="submit">Login</button>

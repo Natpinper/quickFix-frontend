@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/navbar.css"
 import { useContext } from "react";
-import { FaUserCircle, FaArrowRightFromBracket } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 import { AuthContext } from "../context/auth.context";
 function Navbar() {
 
@@ -28,7 +28,7 @@ function Navbar() {
       <Link to="/profile">
       <button>My Profile</button>
       </Link>
-      <button className="user-logout"><FaArrowRightFromBracket></FaArrowRightFromBracket></button>
+      <button className="user-logout">Logout</button>
       </div>
     )}
      
