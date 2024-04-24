@@ -38,9 +38,9 @@ function SearchBar() {
   };
   return (
     <div className="search-bar-container">
-      <div className="input">
+      <div className="searchbar-outter">
         <FaSearch id="search-icon" />
-        <input
+        <input className="searchbar-input"
           placeholder="Search..."
           value={input}
           onChange={(e) => handleChange(e.target.value)}

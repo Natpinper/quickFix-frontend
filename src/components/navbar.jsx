@@ -34,7 +34,7 @@ function Navbar() {
         <button className="about-us">About us</button>
       </Link> 
       <Link to="/profile">
-      <button>My Profile</button>
+      <button className="my-profile-button">My Profile</button>
       </Link>
       <button onClick={logOut} className="user-logout"><FaSignOutAlt className="sign-out-icon"></FaSignOutAlt></button>
       </div>

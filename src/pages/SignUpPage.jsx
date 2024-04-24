@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import authService from "../services/auth.service";
-import "../styles/SignupPage.css"
-import "../styles/LoginPage.css"
+import "../styles/SignupPage.css";
+import "../styles/LoginPage.css";
+import userService from "../services/User.service";
 
-const API_URL = "http://localhost:5005";
+
 
 function SignUpPage(props) {
   const [email, setEmail] = useState("");
@@ -22,15 +23,16 @@ function SignUpPage(props) {
   const handleName = (e) => setName(e.target.value);
   const handleLocation = (e) => setLocation(e.target.value);
 
-  const handleSignup = (e) => {
+  const handleSignupSubmit = (e) => {
     e.preventDefault();
 
-    const newUser = { email, password, name, location };
+    const requestBody = { email, password, name, location };
 
-    authService.signup(newUser)
-      .then((createdUser) => {
+    authService
+      .signup(requestBody)
+      .then((response) => {
         navigate("/login");
-        console.log(createdUser);
+        console.log(response);
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
@@ -42,7 +44,7 @@ function SignUpPage(props) {
     <div className="SignupContainer">
       <h1 className="form-title">Sign Up</h1>
 
-      <form className="Login-Form" onSubmit={handleSignup}>
+      <form className="Login-Form" onSubmit={handleSignupSubmit}>
         <label>Email:</label>
         <input
           required={true}
@@ -79,15 +81,22 @@ function SignUpPage(props) {
           value={location}
           onChange={handleLocation}
         />
+      
+      <button className="signup-button" type="submit">
+        Sign Up
+      </button>
       </form>
-      <button className="signup-button" type="submit">Sign Up</button>
-
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <p>Already have account?</p>
-      <Link className="link-signup" to={"/login"}> Login</Link>
+      <Link className="link-signup" to={"/login"}>
+        {" "}
+        Login
+      </Link>
     </div>
   );
 }
 
 export default SignUpPage;
+
+//authService.signup(requestBody)

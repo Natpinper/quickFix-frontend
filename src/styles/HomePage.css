@@ -1,11 +1,14 @@
+
 .homepage-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 1230px;
-    margin-bottom: 140px;
- 
+    margin-top: 2350px; 
+    margin-bottom: 150px; 
+    padding: 20px; 
+    width: 100%; 
+    box-sizing: border-box;
 }
 
 .PostList{
