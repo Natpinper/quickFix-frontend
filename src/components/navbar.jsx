@@ -13,11 +13,15 @@ function Navbar() {
        <Link to="/">
         <button><img src="./images/Mesa de trabajo 4.png" className="logo"></img></button>
       </Link>
+      <Link to="/" className="site-name">
+      QuickFix
+      </Link>
+      
       </div>
       {!isLoggedIn && (
       <div className="navbar-left">
       <Link to="/about-us">
-        <button>About Us</button>
+        <button className="about-us">About us</button>
       </Link> 
       <Link to="/login">
         <button className="user-icon"><FaUserCircle></FaUserCircle></button>
@@ -27,7 +31,7 @@ function Navbar() {
     {isLoggedIn && (
       <div className="navbar-left">
       <Link to="/about-us">
-        <button>About Us</button>
+        <button className="about-us">About us</button>
       </Link> 
       <Link to="/profile">
       <button>My Profile</button>
