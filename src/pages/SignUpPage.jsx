@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import authService from "../services/auth.service";
+import "../styles/SignupPage.css"
+import "../styles/LoginPage.css"
 
 const API_URL = "http://localhost:5005";
 
@@ -37,10 +39,10 @@ function SignUpPage(props) {
   };
 
   return (
-    <div className="SignUpPageContainer">
-      <h1>Sign Up</h1>
+    <div className="SignupContainer">
+      <h1 className="form-title">Sign Up</h1>
 
-      <form onSubmit={handleSignup}>
+      <form className="Login-Form" onSubmit={handleSignup}>
         <label>Email:</label>
         <input
           required={true}
@@ -78,12 +80,12 @@ function SignUpPage(props) {
           onChange={handleLocation}
         />
       </form>
-      <button type="submit">Sign Up</button>
+      <button className="signup-button" type="submit">Sign Up</button>
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+      <Link className="link-signup" to={"/login"}> Login</Link>
     </div>
   );
 }

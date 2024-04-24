@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
 import authService from "../services/auth.service";
+import "../styles/LoginPage.css"
 
 const API_URL = "http://localhost:5005";
 function LogIn(props) {
@@ -37,22 +38,23 @@ function LogIn(props) {
 
   return (
     <div className="LoginPageContainer">
-      <h1>Login</h1>
+      <h1 className="form-title">Login</h1>
 
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin} className="Login-Form">
         <label>Email:</label>
         <input type="email" name="email" value={email} onChange={handleEmail} />
 
         <label>Password:</label>
         <input type="password" name="password" value={password} onChange={handlePassword} />
 
-        <button type="submit">Login</button>
+        <button type="submit" className="login-button">Login</button>
       </form>
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>Don´t have an account yet?</p>
-      <Link to={"/signup"}>Sign Up</Link>
+      <p className="signup-p">Don´t have an account yet?</p>
+      <Link className="link-login" to={"/signup"}>Sign Up</Link>
+
     </div>
   );
 }
