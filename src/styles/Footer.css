@@ -1,19 +1,23 @@
 footer {
-    position: fixed;
-    margin: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width:100%;
-    background-color: #d1963a; 
-    padding: 20px; 
-    color: #394726;
-    z-index: 1000;
-    height: 11%;
-  }
-  
-  .social-media-icons{
-    font-size: 25px;
-  }
+  position: fixed;
+  margin: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #d1963a;
+  padding: 20px;
+  color: #394726;
+  z-index: 1000;
+  height: 10%;
+}
 
-  
+.social-media-icons {
+  font-size: 25px;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+
+}

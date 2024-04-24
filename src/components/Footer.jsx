@@ -5,6 +5,7 @@ function Footer() {
 
   return (
     <footer>
+    <div className="footer-container"></div>
     <div className="social-media-container">
     <FaFacebook className="social-media-icons"></FaFacebook>
     <FaInstagram className="social-media-icons"></FaInstagram>
