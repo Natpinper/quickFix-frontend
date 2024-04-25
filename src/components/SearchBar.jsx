@@ -12,7 +12,7 @@ function SearchBar() {
     fetchData();
   }, []);
   const fetchData = (value) => {
-    fetch("http://localhost:5005/api/post")
+    fetch("https://quickfix-backend.adaptable.app/api/post")
       .then((response) => response.json())
       .then((json) => {
         const results = json.filter((post) => {

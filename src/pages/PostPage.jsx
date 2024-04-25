@@ -6,7 +6,7 @@ import postService from "../services/Post.service";
 import { FaLocationArrow, FaHeart } from "react-icons/fa";
 import "../styles/PostDetailPage.css";
 
-const API_URL = "http://localhost:5005";
+const API_URL = "https://quickfix-backend.adaptable.app";
 
 function PostPage(props) {
   const [post, setPost] = useState(null);

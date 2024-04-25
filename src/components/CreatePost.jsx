@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import axios from 'axios'
 
-const API_URL = "http://localhost:5005"
+const API_URL = "https://quickfix-backend.adaptable.app"
 function CreatePost() {
 const [title, setTittle] = useState("")
 const [user, setUser]= useState("")

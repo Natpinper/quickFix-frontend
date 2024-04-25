@@ -3,7 +3,7 @@ import axios from "axios";
 import authService from "../services/auth.service";
 import { Navigate } from "react-router-dom";
 
-const API_URL = "http://localhost:5005";
+const API_URL = "https://quickfix-backend.adaptable.app";
 
 const AuthContext = createContext();
 

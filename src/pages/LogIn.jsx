@@ -5,7 +5,7 @@ import { AuthContext } from "../context/auth.context";
 import authService from "../services/auth.service";
 import "../styles/LoginPage.css"
 
-const API_URL = "http://localhost:5005";
+const API_URL = "https://quickfix-backend.adaptable.app";
 function LogIn(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
