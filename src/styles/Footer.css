@@ -6,12 +6,18 @@ footer {
   bottom: 0;
   width: 100%;
   background-color: #d1963a;
-  padding: 20px;
+  padding-top: 10px;
   color: #394726;
   z-index: 1000;
-  height: 11%;
+  height: min-content;
 }
 
 .social-media-icons {
-  font-size: 25px;
+  font-size: 18px;
+  margin-right: 1%;
+  margin-left: 1%;
+}
+
+.footer-text{
+  font-size: 11px;
 }

@@ -3,7 +3,7 @@ import axios from 'axios';
 class PostService {
   constructor() {
     this.api = axios.create({
-      baseURL: import.meta.env.VITE_API_URL || 'https://quickfix-backend.adaptable.app'
+      baseURL: import.meta.env.SERVER_URL || 'http://localhost:5005'
     });
  
     // Automatically set JWT token in the headers for every request

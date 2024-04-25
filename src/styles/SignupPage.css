@@ -1,19 +1,16 @@
 .SignupContainer{
     width: 30%;
-    height: 100%;
-    border:#955621 solid 3px;
+    height: min-content;
+    border:#955621 solid 2px;
     margin: auto;
-    padding-bottom: 40px;
     font-family: "Alfabet";
     margin-top: 9%;
-    margin-bottom: 10%;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    margin-bottom: 10%;  
 }
 .signup-button{
     width: 100%;
     padding: 14px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     font-family: "Alfabet";
     background-color: #d1963a;
@@ -24,9 +21,24 @@
 
 .link-signup{
     color: #487da0;
-    font-size: 18px;
+    font-size: 16px;
 
 }
 .link-signup:hover{
     color: #955621;
+}
+
+.form-title{
+    font-size: 24px;
+    color:#955621 ;
+    
+}
+.lowest-p{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 0px;
+    padding: 0px;
 }

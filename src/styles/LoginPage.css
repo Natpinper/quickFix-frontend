@@ -1,7 +1,7 @@
 .LoginPageContainer{
     width: 30%;
     height: auto;
-    border:#955621 solid 3px;
+    border:#955621 solid 2px;
     margin: auto;
     padding-bottom: 40px;
     font-family: "Alfabet"
@@ -9,13 +9,13 @@
 }
 
 .form-title{
-    font-size: 38px;
+    font-size: 24px;
     color:#955621 ;
 }
 
 .Login-Form{
     color: #394726;
-    font-size: 18px;
+    font-size: 15px;
     text-align: left;
     margin-left: 10%;
     margin-right: 10%;
@@ -24,7 +24,7 @@
 .login-button{
     width: 100%;
     padding: 14px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: bold;
     font-family: "Alfabet";
     background-color: #d1963a;
@@ -33,7 +33,7 @@
     border-radius: 10px;
 }
 input{
-    font-size: 16px;
+    font-size: 12px;
     color:#394726;
     width: 94%;
     border:#955621 solid 2px;
@@ -47,12 +47,12 @@ input{
 
 p{
     color: #394726;
-    font-size: 18px;
+    font-size: 15px;
 }
 
 .link-login{
     color: #487da0;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .link-login:hover{

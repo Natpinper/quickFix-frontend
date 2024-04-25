@@ -87,12 +87,11 @@ function SignUpPage(props) {
       </button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-      <p>Already have account?</p>
-      <Link className="link-signup" to={"/login"}>
-        {" "}
-        Login
-      </Link>
+    <div className="lowest-p">
+      <p>Already have account?</p><Link className="link-signup" to={"/login"}>
+      Login
+    </Link>
+    </div>
     </div>
   );
 }

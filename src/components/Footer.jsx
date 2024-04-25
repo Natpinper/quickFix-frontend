@@ -11,8 +11,8 @@ function Footer() {
     <FaInstagram className="social-media-icons"></FaInstagram>
     <FaWhatsapp className="social-media-icons"></FaWhatsapp>
     </div>
-    <p>Natalia Pinto</p>
-    <p>WD IRONHACK 2024</p>
+    <p className="footer-text">Natalia Pinto</p>
+    <p className="footer-text">WD IRONHACK 2024</p>
     </footer>
   );
 }

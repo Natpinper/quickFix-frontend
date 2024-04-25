@@ -21,27 +21,27 @@ nav button {
   color: #394726;
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 530;
   
 
 }
 
 .user-icon{
-  font-size: 35px;
+  font-size: 25px;
 }
 
 .navbar-left{
-  margin-right: 120px;
+  margin-right: 70px;
   display: flex;
   align-items: center;
   justify-content:center;
-  gap: 30px;
+  gap: 20px;
   
 
 }
 .navbar-right{
-  margin-left: 120px;
+  margin-left: 70px;
   padding: 0px;
   display: flex;
   align-items: center;
@@ -49,32 +49,29 @@ nav button {
 }
 
 .logo{
-  width: 110px;
+  width: 80px;
   height: auto; 
 
 }
 
-.user-logout{
-  font-size: 25px;
-}
 
 .user-logout{
   background-color: #d1963a;
   color: #394726;
   border: none;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 530;
 }
 
 .sign-out-icon{
-  font-size: 35px;
+  font-size: 30px;
 }
 
 .site-name{
   font-family: "Berlin Sans FB";
   font-style:normal;
-  font-size: 38px;
+  font-size: 28px;
   color: #394726;
   text-decoration: none;
   text-transform: uppercase;
@@ -83,14 +80,14 @@ nav button {
 
 .about-us{
   font-family: "helvetica";
-  font-size: 18px;
+  font-size: 13px;
   font-weight: bold;
   font-style: normal;
   color: #394726;
 }
 .my-profile-button{
   font-family: "helvetica";
-  font-size: 18px;
+  font-size: 13px;
   font-weight: bold;
   font-style: normal;
   color: #394726;

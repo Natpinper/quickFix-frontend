@@ -5,7 +5,7 @@ import PostCard from '../components/PostCard';
 
 
 
-const API_URL = "https://quickfix-backend.adaptable.app";
+const API_URL = "http://localhost:5005";
 
 function UserDetailsPage(props) {
     const [user, setUser]= useState(null)
