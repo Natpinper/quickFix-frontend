@@ -36,7 +36,7 @@ function Navbar() {
       <Link to="/profile">
       <button className="my-profile-button">My Profile</button>
       </Link>
-      <button onClick={logOut} className="user-logout"><FaSignOutAlt className="sign-out-icon"></FaSignOutAlt></button>
+      <button onClick={logOut} className="user-logout"><Link to="/" ><FaSignOutAlt className="sign-out-icon"></FaSignOutAlt></Link></button>
       </div>
     )}
      

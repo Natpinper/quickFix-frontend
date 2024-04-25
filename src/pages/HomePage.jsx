@@ -4,6 +4,7 @@ import postService from '../services/Post.service'
 import PostCard from "../components/PostCard"
 import SearchBar from '../components/SearchBar'
 import "../styles/HomePage.css"
+import FilterHomePage from '../components/FilterHomePage'
 
 const API_URL = "http://localhost:5005"
 function HomePage() {
@@ -30,6 +31,7 @@ function HomePage() {
       <PostCard key={post._id} {...post} />
       ))}
     </div>
+    <FilterHomePage></FilterHomePage>
     </div>
   )
 }
