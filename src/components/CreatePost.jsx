@@ -9,30 +9,44 @@ function CreatePost() {
   const [service, setService] = useState([]);
   const [allServices, setAllServices] = useState([]);
   const [description, setDescription] = useState("");
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState();
   const [selectedService, setSelectedService] = useState("");
 
-  const allServicesArray = ["Childcare", "Pets", "Motoring", "Tuition & Classes", "Health & Beauty", "Property & Maintenance"];
+  const allServicesArray = [
+    "Childcare",
+    "Pets",
+    "Motoring",
+    "Tuition & Classes",
+    "Health & Beauty",
+    "Property & Maintenance",
+  ];
 
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const requestBody = { title, user, service, description, price };
+    const requestBody = {
+      title,
+      user: user._id,
+      service: selectedService[0]._id,
+      description,
+      price,
+    };
 
-    axios.post(`${API_URL}/api/post`, requestBody)
-    .then((response) => {
-      setTitle(""), 
-      setDescription(""), 
-      setPrice(0);
-    
-    });
+    axios
+      .post(`${API_URL}/api/post`, requestBody)
+      .then((response) => {
+        setTitle(""), setDescription(""), setPrice(0);
+        console.log(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   useEffect(() => {
-    axios.get(`${API_URL}/api/services`)
-    .then((response) => {
+    axios.get(`${API_URL}/api/services`).then((response) => {
       setAllServices(response.data);
     });
   }, []);
@@ -44,11 +58,11 @@ function CreatePost() {
 
     setService(filteredService);
   }
-  function filterCategory(subcategory){
-    const filteredCategories = service.filter((oneSubcategory)=>{
-      return oneSubcategory.subcategory === subcategory
-    })
-  setSelectedService(filteredCategories)
+  function filterCategory(subcategory) {
+    const filteredCategories = service.filter((oneSubcategory) => {
+      return oneSubcategory.subcategory === subcategory;
+    });
+    setSelectedService(filteredCategories);
   }
 
   return (
@@ -85,32 +99,33 @@ function CreatePost() {
           name="category"
           className="category-select"
         >
-        <option value="">Please choose a category</option>
+          <option value="">Please choose a category</option>
           {allServicesArray.map((serviceOne) => {
             return (
               <option key={serviceOne} value={serviceOne}>
                 {serviceOne}
               </option>
-             
             );
           })}
-          
         </select>
         <select
-        onChange={(e)=>{
-          filterCategory(e.target.value)
-        }}
-        name="subcategory"
-        className="subcategory-select"
+          onChange={(e) => {
+            filterCategory(e.target.value);
+          }}
+          name="subcategory"
+          className="subcategory-select"
         >
-        <option value="">Please choose a subcategory</option>
-        {service.map((oneChosenSub)=>{
-          return(
-            <option key={oneChosenSub.subcategory} value={oneChosenSub.subcategory}>
-            {oneChosenSub.subcategory}</option>
-          )
-        })}
-      
+          <option value="">Please choose a subcategory</option>
+          {service.map((oneChosenSub) => {
+            return (
+              <option
+                key={oneChosenSub.subcategory}
+                value={oneChosenSub.subcategory}
+              >
+                {oneChosenSub.subcategory}
+              </option>
+            );
+          })}
         </select>
 
         <button type="submit">Create Post</button>

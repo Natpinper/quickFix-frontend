@@ -27,18 +27,18 @@ class UserService {
   };
 
   //Get /api/user/:id
-  getOneUser = (id) => {
-    return this.api.get(`/api/user/${id}`);
+  getOneUser = (userId) => {
+    return this.api.get(`/api/user/${userId}`);
   };
 
   //PUT /api/user/:id
-  updateUser = (id, requestBody) => {
-    return this.api.put(`api/user/${id}`, requestBody);
+  updateUser = (userId, requestBody) => {
+    return this.api.put(`/api/user/${userId}`, requestBody);
   };
 
   //Delete /api/user/:id
-  deleteUser = (id) => {
-    return this.api.delete(`api/user/${id}`);
+  deleteUser = (userId) => {
+    return this.api.delete(`/api/user/${userId}`);
   };
 }
 

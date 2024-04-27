@@ -12,6 +12,7 @@ import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
 import UserDetailsPage from "./pages/UserDetailsPage";
 import CreatePost from "./components/CreatePost";
+import EditUser from "./pages/EditUser";
 
 function App() {
   return (
@@ -24,8 +25,9 @@ function App() {
         <Route path="/user/:userId" element={<UserDetailsPage/>} />
         <Route path="/signup" element={<IsAnon><SignUpPage /></IsAnon>}/>
         <Route path="/login" element={<IsAnon><LogIn/></IsAnon>} />
-        <Route path="/profile" element={<IsPrivate><MyProfile/></IsPrivate>}/>
+        <Route path="/:userId/profile" element={<IsPrivate><MyProfile/></IsPrivate>}/>
         <Route path="/post/create" element={<IsPrivate><CreatePost/></IsPrivate>}/>
+        <Route path=":userId/profile/edit" element={<IsPrivate><EditUser/></IsPrivate>} />
       </Routes>
       <Footer />
     </div>
