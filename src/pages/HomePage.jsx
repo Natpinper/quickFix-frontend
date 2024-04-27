@@ -7,7 +7,7 @@ import "../styles/HomePage.css"
 import FilterHomePage from '../components/FilterHomePage'
 
 const API_URL = "http://localhost:5005"
-function HomePage() {
+function HomePage(props) {
 
   const [post, setPost] = useState([])
   

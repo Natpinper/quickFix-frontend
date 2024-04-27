@@ -1,0 +1,9 @@
+.Create-post-form-container{
+display: flex;
+flex-direction: column;
+}
+
+.form-create{
+    display: flex;
+    flex-direction: column
+}
