@@ -11,6 +11,7 @@ import SignUpPage from "./pages/SignUpPage";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
 import UserDetailsPage from "./pages/UserDetailsPage";
+import CreatePost from "./components/CreatePost";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/signup" element={<IsAnon><SignUpPage /></IsAnon>}/>
         <Route path="/login" element={<IsAnon><LogIn/></IsAnon>} />
         <Route path="/profile" element={<IsPrivate><MyProfile/></IsPrivate>}/>
+        <Route path="/post/create" element={<IsPrivate><CreatePost/></IsPrivate>}/>
       </Routes>
       <Footer />
     </div>
