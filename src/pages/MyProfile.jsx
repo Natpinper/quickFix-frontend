@@ -6,7 +6,7 @@ import { AuthContext } from "../context/auth.context";
 import { confirmAlert } from "react-confirm-alert";
 
 function MyProfile() {
-  const { user, setUser, isLoggedIn } = useContext(AuthContext);
+  const { user, setUser, isLoggedIn, removeToken, logOut } = useContext(AuthContext);
   const { userId } = useParams();
 
   const navigate = useNavigate();
@@ -19,9 +19,10 @@ function MyProfile() {
   };
   const deleteUser = (userId) => {
     userService.deleteUser(userId).then(() => {
-      alert("The user has been deleted");
-      isLoggedIn(false);
+      logOut()
       navigate("/");
+      alert("The user has been deleted");
+      
     });
   };
 

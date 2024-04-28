@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import userService from "../services/User.service";
-
+import { AuthContext } from "../context/auth.context";
 function EditUser() {
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
+
+  const { user, setUser, authenticateUser } = useContext(AuthContext);
 
   const { userId } = useParams();
   const navigate = useNavigate();
@@ -27,8 +29,12 @@ userService.getOneUser(userId)
 
     userService.updateUser(userId, requestBody)
     .then((response) => {
+      authenticateUser()
       navigate(`/${userId}/profile`);
       alert("User´s details have been updated");
+     
+      
+      
     })
     .catch((err)=>{
         console.log(err)

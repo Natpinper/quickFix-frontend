@@ -1,7 +1,7 @@
 import { useState, useEffect, createContext } from "react";
 import axios from "axios";
 import authService from "../services/auth.service";
-import { Navigate } from "react-router-dom";
+import { useNavigate, Navigate} from "react-router-dom";
 
 const API_URL = "http://localhost:5005";
 
@@ -11,6 +11,7 @@ function AuthProviderWrapper(props) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState(null);
+
 
   const storeToken = (token) => {
     localStorage.setItem("authToken", token);
