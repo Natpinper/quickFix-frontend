@@ -27,7 +27,7 @@ userService.getOneUser(userId)
 
     userService.updateUser(userId, requestBody)
     .then((response) => {
-      navigate("/profile");
+      navigate(`/${userId}/profile`);
       alert("User´s details have been updated");
     })
     .catch((err)=>{
@@ -36,7 +36,7 @@ userService.getOneUser(userId)
   };
 
   return (
-    <div>
+    <div className="Edit-User">
       <form onSubmit={handleFormSubmit}>
         <label>Name:</label>
         <input

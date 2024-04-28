@@ -14,7 +14,7 @@ function MyProfile() {
   const getUser = (userId) => {
     userService
       .getOneUser(userId)
-      .then((response) => setUser)
+      .then((response) => setUser(response.data))
       .catch((error) => console.log(error));
   };
   const deleteUser = (userId) => {
@@ -32,7 +32,7 @@ function MyProfile() {
       buttons: [
         {
           label: "Yes",
-          onClick: deleteUser(userId),
+          onClick:()=> deleteUser(userId),
         },
         {
           label: "No",
