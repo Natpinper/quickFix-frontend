@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useEffect } from 'react';
 
 const subcategoriesByCategory = {
     Childcare: ["Nannies", "Babysitting"],
@@ -78,6 +79,7 @@ function FilterHomePage() {
     const[category, setCategory]= useState("")
     const [subcategory, setSubcategory]= useState("")
     const [location, setLocation] = useState([])
+    const [posts, setPosts] = useState([])
 
     const cityArray = locationArray.map(location => location.city);
 
@@ -92,23 +94,25 @@ function FilterHomePage() {
     async function handleSubmit(event) {
         event.preventDefault();
     
-        try {
-          // Construct query parameters
-          const queryParams = new URLSearchParams();
-          if (category) queryParams.append('category', category);
-          if (subcategory) queryParams.append('subcategory', subcategory);
-          if (location) queryParams.append('location', location);
-    
-          // Fetch filtered posts
-          const response = await fetch(`/posts?${queryParams.toString()}`);
-          const posts = await response.json();
-          
-          // Handle the filtered posts (e.g., update state with the filtered posts)
-          console.log(posts);
+        try{
+          const requestOptions = {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ category, subcategory, location })
+          };
+          const response = await fetch(`/filtered-post`, requestOptions);
+          const filteredPosts = await response.json();
+          setPosts(filteredPosts)
         } catch (error) {
           console.error(error);
         }
       }
+
+      useEffect(() => {
+        handleSubmit();
+
+      }, [category, subcategory, location]);
+
   return (
     <div>
     <form onSubmit={handleSubmit}>
