@@ -1,0 +1,26 @@
+.UserDetails{
+    font-family: "Alfabet";
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.name-user-details{
+    color: #487da0;
+    font-size: 28px;
+}
+.location-user-details{
+    color: #394726;
+    font-size: 18px;
+}
+.rating{
+    color:#394726 ;
+    font-size: 16px;
+}
+
+.user-posts{
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+}

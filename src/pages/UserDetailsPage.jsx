@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import userService from '../services/User.service';
 import { Link, useParams } from 'react-router-dom';
 import PostCard from '../components/PostCard';
+import "../styles/UserDetailsPage.css"
 
 
 
@@ -31,10 +32,10 @@ function UserDetailsPage(props) {
     <div className='UserDetails'>
     {user && (
         <>
-        <h1 className='name'>{user.name}</h1>
-        <h2 className='location'>{user.location}</h2>
-        <h3 className='rating'>{user.rating}</h3>
-        <div>{user.posts && user.posts.map((post)=>(
+        <h1 className='name-user-details'>{user.name}</h1>
+        <h2 className='location-user-details'>{user.location}</h2>
+        <h3 className='rating'>Rating: {user.rating}</h3>
+        <div className='user-posts'>{user.posts && user.posts.map((post)=>(
             <PostCard key={post._id} {...post}/>
 
     ))}
