@@ -42,7 +42,7 @@ function PostPage(props) {
     <div className="PostDetails">
       {post && (
         <>
-        <h1 className="title">{post.title}</h1>
+        <h1 className="title-details">{post.title}</h1>
         <Link to={`/user/${post.user._id}`}><h2 className="user-name">{post.user.name}</h2></Link>
         <h2 className="category">{post.service.category}</h2>
         <h3 className="subcategory">{post.service.subcategory}</h3>
