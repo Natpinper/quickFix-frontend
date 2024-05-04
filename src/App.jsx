@@ -13,6 +13,8 @@ import IsAnon from "./components/IsAnon";
 import UserDetailsPage from "./pages/UserDetailsPage";
 import CreatePost from "./components/CreatePost";
 import EditUser from "./pages/EditUser";
+import UserPostsPage from "./pages/UserPostsPage";
+import EditPost from "./pages/EditPost";
 
 function App() {
   return (
@@ -28,6 +30,8 @@ function App() {
         <Route path="/:userId/profile" element={<IsPrivate><MyProfile/></IsPrivate>}/>
         <Route path="/post/create" element={<IsPrivate><CreatePost/></IsPrivate>}/>
         <Route path=":userId/profile/edit" element={<IsPrivate><EditUser/></IsPrivate>} />
+        <Route path= "/user/post/:postId" element= {<IsPrivate><UserPostsPage/></IsPrivate>}/>
+        <Route path="/user/post/:postId/edit" element={<IsPrivate><EditPost/></IsPrivate>} />
       </Routes>
       <Footer />
     </div>

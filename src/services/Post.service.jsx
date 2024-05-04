@@ -33,6 +33,12 @@ class PostService {
   getPost = id => {
     return this.api.get(`/api/post/${id}`);
   };
+
+  //get /api/:userId/profile/post/
+  getPostFromUser = id => {
+    return this.api.get(`/api/user/post/${id}`)
+  }
+
  
   // PUT /api/post/:id
   updatePost = (id, requestBody) => {

@@ -11,7 +11,11 @@ function Navbar() {
       <div className="navbar-right">
         <Link to="/">
           <button>
-            <img src="./images/Mesa de trabajo 4.png" className="logo"></img>
+            <img
+              src="./images/Mesa de trabajo 4.png"
+              alt="´logopic"
+              className="logo"
+            ></img>
           </button>
         </Link>
         <Link to="/" className="site-name">

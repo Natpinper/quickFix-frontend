@@ -66,7 +66,7 @@ const locationArray = [
 ];
 function FilterByLocationPosts() {
   const [input, setInput] = useState("");
-  const [location, setLocation] = useState("");
+  const [location, setLocation] = useState("Barcelona");
   const [filteredPosts, setFilteredPosts] = useState([]);
 
   const cityArray = locationArray.map((location) => location.city);
@@ -112,7 +112,7 @@ function FilterByLocationPosts() {
         <select
           name="location"
           className="location-select"
-          value={input}
+          value={location}
           onChange={handleChange}
         >
           <option value="">Select a location</option>

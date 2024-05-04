@@ -7,7 +7,7 @@ import { confirmAlert } from "react-confirm-alert";
 
 function MyProfile() {
   const { user, setUser, isLoggedIn, removeToken, logOut } = useContext(AuthContext);
-  const { userId } = useParams();
+  const { userId, postId } = useParams();
 
   const navigate = useNavigate();
 
@@ -58,7 +58,9 @@ function MyProfile() {
           location={user.location}
           posts={user.posts}
         />
+        
       </div>
+     
 
       <Link to="/post/create">
         <button>Create new post</button>

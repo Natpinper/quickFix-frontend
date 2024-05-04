@@ -34,7 +34,7 @@ function HomePage(props) {
       ))}
     </div>
     <div className='filtered-by-Location'>
-   <FilterByLocationPosts/>
+   <FilterByLocationPosts />
     </div>
     </div>
   )
