@@ -62,11 +62,11 @@ function MyProfile() {
       </div>
      
 
-      <Link to="/post/create">
+      <Link to={`/user/${userId}/post/create`}>
         <button>Create new post</button>
       </Link>
       <button onClick={submitDelete}>Delete User</button>
-      <Link to={`/${userId}/profile/edit`}>
+      <Link to={`/user/${userId}/profile/edit`}>
         <button>Edit user</button>
       </Link>
     </div>

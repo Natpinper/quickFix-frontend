@@ -14,6 +14,7 @@ function ProfileComponent({ name, email, password, location, posts, _id }) {
           posts.map((post) => (
             <PostCardUser
               key={post._id}
+              userId={post.user}
               _id={post._id}
               title={post.title}
               description={post.description}

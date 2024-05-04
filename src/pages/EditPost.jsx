@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import postService from '../services/Post.service'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios';
 
 const API_URL = "http://localhost:5005";
@@ -24,7 +24,7 @@ function EditPost() {
         "Property & Maintenance",
       ];
 
-    const {postId} = useParams()
+    const {postId, userId} = useParams()
     const navigate = useNavigate()
 
 
@@ -81,7 +81,7 @@ function EditPost() {
 
         postService.updatePost(postId, requestBody)
         .then((response)=>{
-          navigate(`/user/post/${postId}`)  
+          navigate(`/user/${userId}/post/${postId}`)  
           alert("Post´s details have been updated")
         })
         .catch((error)=>{
@@ -150,8 +150,10 @@ function EditPost() {
           })}
         </select>
       <button type='submit'>Submit changes</button>
-      
       </form>
+      <Link to={`/user/${userId}/profile`}>
+            <button>Back to My Profile</button>
+            </Link>
     </div>
   )
 }

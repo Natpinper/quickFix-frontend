@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import userService from "../services/User.service";
 import { AuthContext } from "../context/auth.context";
+import { Link } from "react-router-dom";
 function EditUser() {
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
@@ -59,6 +60,9 @@ userService.getOneUser(userId)
         />
         <button type="submit">Update User</button>
       </form>
+      <Link to={`/user/${userId}/profile`}>
+      <button>Back to My Profile</button>
+      </Link>
     </div>
   );
 }

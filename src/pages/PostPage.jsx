@@ -5,7 +5,7 @@ import axios from "axios";
 import postService from "../services/Post.service";
 import { FaLocationArrow, FaHeart } from "react-icons/fa";
 import "../styles/PostDetailPage.css";
-import UserPostDetails from "../components/UserPostDetails";
+
 
 const API_URL = "http://localhost:5005";
 

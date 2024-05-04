@@ -72,7 +72,7 @@ function UserPostsPage(props) {
           <h3 className="price">{post.price} €/hour</h3>
           {user._id === post.user._id && <button onClick={submitDelete}>Delete Post</button>}
           {user._id === post.user._id && 
-            <Link to={`/user/post/${postId}/edit`}>
+            <Link to={`/user/${userId}/post/${postId}/edit`}>
             <button>Edit Post</button>
             </Link>}
         </>

@@ -11,7 +11,7 @@ import SignUpPage from "./pages/SignUpPage";
 import IsPrivate from "./components/IsPrivate";
 import IsAnon from "./components/IsAnon";
 import UserDetailsPage from "./pages/UserDetailsPage";
-import CreatePost from "./components/CreatePost";
+import CreatePost from "./pages/CreatePost";
 import EditUser from "./pages/EditUser";
 import UserPostsPage from "./pages/UserPostsPage";
 import EditPost from "./pages/EditPost";
@@ -27,11 +27,11 @@ function App() {
         <Route path="/user/:userId" element={<UserDetailsPage/>} />
         <Route path="/signup" element={<IsAnon><SignUpPage /></IsAnon>}/>
         <Route path="/login" element={<IsAnon><LogIn/></IsAnon>} />
-        <Route path="/:userId/profile" element={<IsPrivate><MyProfile/></IsPrivate>}/>
-        <Route path="/post/create" element={<IsPrivate><CreatePost/></IsPrivate>}/>
-        <Route path=":userId/profile/edit" element={<IsPrivate><EditUser/></IsPrivate>} />
-        <Route path= "/user/post/:postId" element= {<IsPrivate><UserPostsPage/></IsPrivate>}/>
-        <Route path="/user/post/:postId/edit" element={<IsPrivate><EditPost/></IsPrivate>} />
+        <Route path="/user/:userId/profile" element={<IsPrivate><MyProfile/></IsPrivate>}/>
+        <Route path="/user/:userId/post/create" element={<IsPrivate><CreatePost/></IsPrivate>}/>
+        <Route path="/user/:userId/profile/edit" element={<IsPrivate><EditUser/></IsPrivate>} />
+        <Route path= "/user/:userId/post/:postId" element= {<IsPrivate><UserPostsPage/></IsPrivate>}/>
+        <Route path="/user/:userId/post/:postId/edit" element={<IsPrivate><EditPost/></IsPrivate>} />
       </Routes>
       <Footer />
     </div>

@@ -2,6 +2,7 @@ import React, { useEffect, useContext } from "react";
 import { useState } from "react";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
+import { Navigate, useNavigate, useParams, Link } from "react-router-dom";
 
 const API_URL = "http://localhost:5005";
 function CreatePost() {
@@ -11,6 +12,9 @@ function CreatePost() {
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState();
   const [selectedService, setSelectedService] = useState("");
+
+  const navigate= useNavigate()
+  const {userId} = useParams()
 
   const allServicesArray = [
     "Childcare",
@@ -39,6 +43,7 @@ function CreatePost() {
       .then((response) => {
         setTitle(""), setDescription(""), setPrice(0);
         console.log(response.data);
+        navigate(`/user/${userId}/profile`)
       })
       .catch((err) => {
         console.log(err);
@@ -130,6 +135,9 @@ function CreatePost() {
 
         <button type="submit">Create Post</button>
       </form>
+      <Link to={`/user/${userId}/profile`}>
+      <button>Back to My Profile</button>
+      </Link>
     </div>
   );
 }

@@ -39,7 +39,7 @@ function Navbar() {
           <Link to="/about-us">
             <button className="about-us">About us</button>
           </Link>
-          <Link to={`${user._id}/profile`}>
+          <Link to={`/user/${user._id}/profile`}>
             <button className="my-profile-button">My Profile</button>
           </Link>
           <button onClick={logOut} className="user-logout">

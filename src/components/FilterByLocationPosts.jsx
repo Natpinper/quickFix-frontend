@@ -69,7 +69,7 @@ function FilterByLocationPosts() {
   const [location, setLocation] = useState("Barcelona");
   const [filteredPosts, setFilteredPosts] = useState([]);
 
-  const cityArray = locationArray.map((location) => location.city);
+  const cityArray = locationArray.map((location) => location.city).sort();
 
   useEffect(() => {
     fetchData(location);
