@@ -75,8 +75,8 @@ const locationArray = [
 function SignUpPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("")
   const [name, setName] = useState("");
-  const [input, setInput] = useState("");
   const [location, setLocation] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
@@ -86,11 +86,17 @@ function SignUpPage(props) {
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
+  const handleRepeatPassword = (e)=>setRepeatPassword(e.target.value)
   const handleName = (e) => setName(e.target.value);
   const handleLocation = (e) => setLocation(e.target.value);
 
   const handleSignupSubmit = (e) => {
     e.preventDefault();
+
+    if(password !== repeatPassword){
+      setErrorMessage("Passwords do not match")
+      return
+    }
 
     const requestBody = { email, password, name, location };
 
@@ -105,10 +111,7 @@ function SignUpPage(props) {
         setErrorMessage(errorDescription);
       });
   };
-  const handleChange = (e) => {
-    setInput(e.target.value);
-    setLocation(e.target.value);
-  };
+  
 
   return (
     <div className="SignupContainer">
@@ -133,6 +136,15 @@ function SignUpPage(props) {
           value={password}
           onChange={handlePassword}
         />
+        <label>Repeat Password:</label>
+        <input
+        required={true}
+        minLength={6}
+        type="password"
+        name="repeatPassword"
+        value={repeatPassword}
+        onChange={handleRepeatPassword}
+        />
 
         <label>Name:</label>
         <input
@@ -148,7 +160,7 @@ function SignUpPage(props) {
           name="location"
           className="location-select"
           value={location}
-          onChange={handleChange}
+          onChange={handleLocation}
         >
           <option value="">Select a location</option>
           {cityArray.map((city, index) => (
