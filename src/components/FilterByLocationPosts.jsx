@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PostCard from "./PostCard";
+import "../styles/HomePage.css"
+import { FaUnderline } from "react-icons/fa";
 
 const locationArray = [
   { city: "Almería", region: "Andalusia" },
@@ -105,11 +107,13 @@ function FilterByLocationPosts() {
     e.preventDefault();
     fetchData(location);
   };
+  const hasResults = filteredPosts.length > 0
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="location">Location:</label>
-        <select
+    <div className="location-search">
+      <form onSubmit={handleSubmit} className={`Location-form ${hasResults ? 'has-results' : ''}`} style={{display: "flex", flexDirection: "row", gap:"12px" }}>
+        <label htmlFor="location" className="location-title"><h2 style={{color:"#394726", fontSize: "16px"}}>FIND IN YOUR AREA</h2> </label>
+        <div className="filterSelect">
+        <select 
           name="location"
           className="location-select"
           value={location}
@@ -122,16 +126,22 @@ function FilterByLocationPosts() {
             </option>
           ))}
         </select>
-        <button type="submit">Filter</button>
+        <button type="submit" className="Filter-button">Filter</button>
+        </div>
       </form>
 
-      <div className="search-bar-results">
-        <div className="PostListResults">
+      <div className={`search-bar-results ${hasResults ? 'has-results' : ''}`}>
+      {hasResults ? (
+        <div className="PostListResults" >
           {filteredPosts.map((post) => (
             <PostCard key={post._id} {...post} />
           ))}
         </div>
+      ):(
+        <p>No results found.</p>
+      )}
       </div>
+       
     </div>
   );
 }

@@ -26,16 +26,13 @@ function HomePage(props) {
   return (
     <div className='homepage-container'>
     <SearchBar/>
-    {/*<FilterHomePage></FilterHomePage>*/}
     <h2 className='featured-categories'>FEATURED CATEGORIES</h2>
     <div className='PostList'>
       {post.map((post)=>(
       <PostCard key={post._id} {...post} />
       ))}
     </div>
-    <div className='filtered-by-Location'>
    <FilterByLocationPosts />
-    </div>
     </div>
   )
 }

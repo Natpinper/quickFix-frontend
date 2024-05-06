@@ -22,10 +22,41 @@
 }
 
 .featured-categories{
-text-decoration: #394726;
+    color: #394726;
     font-size: 16px;
     align-self: flex-start;
     text-align: left;
     margin-left: 13%;
     
+}
+
+.Filter-button{
+    width: 40%;
+    padding: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: "Alfabet";
+    background-color: #d1963a;
+    color: #955621;
+    border:#955621 solid 2px;
+    border-radius: 10px;
+}
+
+.Location-form{
+    width: 100%;
+    text-align: left;
+    position:sticky;
+    justify-content:space-around;
+
+}
+.filterSelect{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 20px;
+    width: 40%;
+    margin-right: 0px;
+}
+.location-search{
+    width: 100%;
 }

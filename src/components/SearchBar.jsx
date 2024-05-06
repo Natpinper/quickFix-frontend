@@ -38,7 +38,7 @@ function SearchBar() {
   };
   return (
     <div className="search-bar-container">
-      <div className="searchbar-outter" style={{ marginTop: results.length > 0 ? "620px" : "300px" }}>
+      <div className="searchbar-outter" style={{ marginTop: results.length > 0 ? "590px" : "300px" }}>
         <FaSearch id="search-icon" />
         <input className="searchbar-input"
           placeholder="Search..."
@@ -47,12 +47,13 @@ function SearchBar() {
         />
       </div>
 
-      <div className="search-bar-results"  style={{display: results.length===0 ? "none":"block" }}>
+      <div className="search-bar-results" >
         <div className="PostListResults" >
           {results.map((post) => (
               <PostCard key={post._id} {...post}   />
           ))}
         </div>
+     
       </div>
     </div>
   );
