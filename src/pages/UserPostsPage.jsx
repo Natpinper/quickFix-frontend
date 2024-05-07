@@ -4,6 +4,7 @@ import postService from "../services/Post.service";
 import { Link } from "react-router-dom";
 import { FaLocationArrow } from "react-icons/fa";
 import "../styles/PostDetailPage.css";
+import "../styles/deletePostUserPage.css"
 import axios from "axios";
 import { AuthContext } from "../context/auth.context";
 import "../services/Post.service";
@@ -46,10 +47,12 @@ function UserPostsPage(props) {
       message: "Are you sure you want to delete this post?",
       buttons: [
         {
+          className:"button-confirm",
           label: "Yes",
           onClick:()=> deletePost(postId)
         },
         {
+          className:"button-confirm",
           label: "No",
           onClick:()=>{}
         }
@@ -64,17 +67,19 @@ function UserPostsPage(props) {
     <div className="PostDetails">
       {post && (
         <>
-          <h1 className="title">{post.title}</h1>
+          <h1 className="title-details">{post.title}</h1>
           <h2 className="category">{post.service.category}</h2>
           <h3 className="subcategory">{post.service.subcategory}</h3>
           <p className="description">{post.description}</p>
-          <div className="location-container"></div>
+          <h3 className="location"></h3>
           <h3 className="price">{post.price} €/hour</h3>
-          {user._id === post.user._id && <button onClick={submitDelete}>Delete Post</button>}
+          <div className="submit-button-post">
+          {user._id === post.user._id && <button className="specific-button" onClick={submitDelete}>Delete Post</button>}
           {user._id === post.user._id && 
             <Link to={`/user/${userId}/post/${postId}/edit`}>
-            <button>Edit Post</button>
+            <button className="specific-button">Edit Post</button>
             </Link>}
+            </div>
         </>
       )}
     </div>

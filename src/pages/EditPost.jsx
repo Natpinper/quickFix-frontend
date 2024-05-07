@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import postService from '../services/Post.service'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios';
-
+import "../styles/CreatePost.css"
 const API_URL = "http://localhost:5005";
 function EditPost() {
 
@@ -90,9 +90,10 @@ function EditPost() {
     }
 
   return (
-    <div>
-      <form onSubmit={handleFormSubmit}>
-      <label>Title</label>
+    <div className="Create-post-form-container">
+    <h2 className="form-title">Edit your post</h2>
+      <form onSubmit={handleFormSubmit} className="form-create">
+      <label>Title:</label>
       <input
         type="text"
         name="name"
@@ -105,7 +106,7 @@ function EditPost() {
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
-      <label>Price</label>
+      <label>Price:</label>
       <input
         placeholder="€/hour"
         type="number"
@@ -114,6 +115,7 @@ function EditPost() {
         value={price}
         onChange={(e) => setPrice(e.target.value)}
       />
+      <label className="category-select">Select a category:</label>
       <select
           onChange={(e) => {
             filterService(e.target.value);
@@ -130,6 +132,7 @@ function EditPost() {
             );
           })}
         </select>
+        <label className="subcategory-select">Select a subcategory:</label>
         <select
           onChange={(e) => {
             filterCategory(e.target.value);
@@ -149,7 +152,7 @@ function EditPost() {
             );
           })}
         </select>
-      <button type='submit'>Submit changes</button>
+      <button type='submit' className="submit-button">Submit changes</button>
       </form>
       <Link to={`/user/${userId}/profile`}>
             <button>Back to My Profile</button>
