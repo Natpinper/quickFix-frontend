@@ -77,6 +77,7 @@ function CreatePost() {
       <form onSubmit={handleSubmit} className="form-create">
         <label>Title:</label>
         <input
+        required="true"
           type="text"
           name="title"
           value={title}
@@ -84,6 +85,7 @@ function CreatePost() {
         />
         <label>Description:</label>
         <textarea
+        required="true"
           name="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
@@ -99,6 +101,7 @@ function CreatePost() {
         />
         <label className="category-select">Select a category:</label>
         <select
+        required="true"
           onChange={(e) => {
             filterService(e.target.value);
           }}
@@ -117,6 +120,7 @@ function CreatePost() {
         </select>
         <label className="subcategory-select">Select a subcategory:</label>
         <select
+        required="true"
           onChange={(e) => {
             filterCategory(e.target.value);
           }}

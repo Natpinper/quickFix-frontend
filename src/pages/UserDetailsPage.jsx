@@ -6,7 +6,6 @@ import PostCard from "../components/PostCard";
 const API_URL = "http://localhost:5005";
 
 function UserDetailsPage(props) {
-
   const [user, setUser] = useState(null);
   const { userId } = useParams();
 
@@ -16,6 +15,7 @@ function UserDetailsPage(props) {
       .then((response) => {
         const oneUser = response.data;
         setUser(oneUser);
+        console.log(oneUser);
       })
       .catch((err) => {
         console.log(err);
@@ -37,13 +37,13 @@ function UserDetailsPage(props) {
             {user.posts &&
               user.posts.map((post) => (
                 <PostCard
-                key={post._id}
-                user={post.user}
-                _id={post._id}
-                title={post.title}
-                description={post.description}
-                price={post.price}
-                service={post.service}
+                  key={post._id}
+                  user={post.user}
+                  _id={post._id}
+                  title={post.title}
+                  description={post.description}
+                  price={post.price}
+                  service={post.service}
                 />
               ))}
           </div>

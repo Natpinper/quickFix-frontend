@@ -4,11 +4,13 @@ import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import userService from "../services/User.service";
 import { AuthContext } from "../context/auth.context";
 import { confirmAlert } from "react-confirm-alert";
+import axios from "axios";
 
 function MyProfile() {
-  const { user, setUser, isLoggedIn, removeToken, logOut } = useContext(AuthContext);
+  const { user, setUser, isLoggedIn, removeToken, logOut, authenticateUser } =
+    useContext(AuthContext);
   const { userId, postId } = useParams();
-
+  const [imageUrl, setImageUrl] = useState(null);
   const navigate = useNavigate();
 
   const getUser = (userId) => {
@@ -19,32 +21,57 @@ function MyProfile() {
   };
   const deleteUser = (userId) => {
     userService.deleteUser(userId).then(() => {
-      logOut()
+      logOut();
       navigate("/");
       alert("The user has been deleted");
-      
     });
   };
 
   const submitDelete = () => {
     confirmAlert({
-      title : "Confirm to delete",
+      title: "Confirm to delete",
       message: "Are you sure you want to delete this user?",
       buttons: [
         {
-          className:"button-confirm",
+          className: "button-confirm",
           label: "Yes",
-          onClick:()=> deleteUser(userId),
+          onClick: () => deleteUser(userId),
         },
         {
-          className:"button-confirm",
+          className: "button-confirm",
           label: "No",
           onClick: () => {},
         },
       ],
-    overlayClassName: "confirm-alert-overlay",
-    className: "confirm-alert",
+      overlayClassName: "confirm-alert-overlay",
+      className: "confirm-alert",
     });
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const requestBody = { imageUrl };
+    userService.updateUser(userId,  requestBody ).
+    then((response) => {
+      authenticateUser();
+      alert("Profile picture has been uploaded");
+    })
+    .catch((err)=>{
+      console.log(err)
+    })
+  };
+  const handleFileUpload = (e) => {
+    console.log("The file to be uploaded is: ", e.target.files[0]);
+    const uploadData = new FormData();
+    // req.body to .create() method when creating a new movie in '/api/movies' POST route
+    uploadData.append("imageUrl", e.target.files[0]);
+    axios
+      .post("http://localhost:5005/api/upload", uploadData)
+      .then((response) => {
+        // response carries "fileUrl" which we can use to update the state
+        setImageUrl(response.data.fileUrl);
+        console.log(response.data.fileUrl);
+      })
+      .catch((err) => console.log("Error while uploading the file: ", err));
   };
 
   useEffect(() => {
@@ -61,18 +88,27 @@ function MyProfile() {
           password={user.password}
           location={user.location}
           posts={user.posts}
+          imageUrl={user.imageUrl}
         />
-        
       </div>
-     
-<div className="User-buttons">
-      <Link to={`/user/${userId}/post/create`}>
-        <button>Create new post</button>
-      </Link>
-      <button onClick={submitDelete}>Delete User</button>
-      <Link to={`/user/${userId}/profile/edit`}>
-        <button>Edit user</button>
-      </Link>
+      <form onSubmit={handleSubmit}>
+        <label>Profile picture:</label>
+        <input
+          type="file"
+          onChange={(e) => {
+            handleFileUpload(e);
+          }}
+        />
+        <button type="submit">Upload picture</button>
+      </form>
+      <div className="User-buttons">
+        <Link to={`/user/${userId}/post/create`}>
+          <button>Create new post</button>
+        </Link>
+        <button onClick={submitDelete}>Delete User</button>
+        <Link to={`/user/${userId}/profile/edit`}>
+          <button>Edit user</button>
+        </Link>
       </div>
     </div>
   );

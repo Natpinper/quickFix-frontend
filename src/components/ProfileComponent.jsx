@@ -4,9 +4,10 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import PostCardUser from "./PostCardUser";
 import "../styles/userProfile.css"
-function ProfileComponent({ name, email, password, location, posts, _id }) {
+function ProfileComponent({ name, email, password, location, posts, _id, imageUrl }) {
   return (
     <div className="profile-layout">
+    <img src={imageUrl}/>
       <h1 className="myName">{name}</h1>
       <h3 className="myEmail">email: {email}</h3>
       <h3 className="myLocation">Location: {location}</h3>
@@ -21,6 +22,7 @@ function ProfileComponent({ name, email, password, location, posts, _id }) {
               description={post.description}
               price={post.price}
               service={post.service}
+             
             />
           ))}
       </div>
@@ -29,3 +31,4 @@ function ProfileComponent({ name, email, password, location, posts, _id }) {
 }
 
 export default ProfileComponent;
+
