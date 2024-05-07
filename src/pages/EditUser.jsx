@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import userService from "../services/User.service";
 import { AuthContext } from "../context/auth.context";
 import { Link } from "react-router-dom";
+import "../styles/CreatePost.css"
 
 const locationArray = [
   { city: "Almería", region: "Andalusia" },
@@ -110,8 +111,10 @@ function EditUser() {
   };
 
   return (
-    <div className="Edit-User">
-      <form onSubmit={handleFormSubmit}>
+    <div className="edit-user-info">
+    <div className="Create-post-form-container">
+    <h2 className="form-title">Edit user´s details</h2>
+      <form onSubmit={handleFormSubmit} className="form-create">
         <label>Name:</label>
         <input
           type="text"
@@ -119,25 +122,26 @@ function EditUser() {
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <label>Location:</label>
+        <label className="category-select">Location:</label>
         <select
           name="location"
-          className="location-select"
+          className="category-select"
           value={location}
           onChange={handleChange}
         >
-          <option value="">Select your Location</option>
+          <option value="">Select your location</option>
           {cityArray.map((city, index) => (
             <option key={index} value={city}>
               {city}
             </option>
           ))}
         </select>
-        <button type="submit">Update User</button>
+        <button type="submit" className="submit-button">Update User</button>
       </form>
       <Link to={`/user/${userId}/profile`}>
         <button>Back to My Profile</button>
       </Link>
+    </div>
     </div>
   );
 }
