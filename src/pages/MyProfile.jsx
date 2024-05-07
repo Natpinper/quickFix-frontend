@@ -28,18 +28,22 @@ function MyProfile() {
 
   const submitDelete = () => {
     confirmAlert({
-      title: "Confirm to delete",
+      title : "Confirm to delete",
       message: "Are you sure you want to delete this user?",
       buttons: [
         {
+          className:"button-confirm",
           label: "Yes",
           onClick:()=> deleteUser(userId),
         },
         {
+          className:"button-confirm",
           label: "No",
           onClick: () => {},
         },
       ],
+    overlayClassName: "confirm-alert-overlay",
+    className: "confirm-alert",
     });
   };
 
