@@ -3,6 +3,7 @@ import { useState } from "react";
 import { AuthContext } from "../context/auth.context";
 import axios from "axios";
 import { Navigate, useNavigate, useParams, Link } from "react-router-dom";
+import "../styles/CreatePost.css"
 
 const API_URL = "http://localhost:5005";
 function CreatePost() {
@@ -72,9 +73,9 @@ function CreatePost() {
 
   return (
     <div className="Create-post-form-container">
-      <h2>Create a new post</h2>
+      <h2 className="form-title">Create a new post</h2>
       <form onSubmit={handleSubmit} className="form-create">
-        <label>Title</label>
+        <label>Title:</label>
         <input
           type="text"
           name="title"
@@ -87,7 +88,7 @@ function CreatePost() {
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
-        <label>Price</label>
+        <label>Price:</label>
         <input
           placeholder="€/hour"
           type="number"
@@ -96,7 +97,7 @@ function CreatePost() {
           value={price}
           onChange={(e) => setPrice(e.target.value)}
         />
-
+        <label className="category-select">Select a category:</label>
         <select
           onChange={(e) => {
             filterService(e.target.value);
@@ -104,6 +105,7 @@ function CreatePost() {
           name="category"
           className="category-select"
         >
+        
           <option value="">Please choose a category</option>
           {allServicesArray.map((serviceOne) => {
             return (
@@ -113,6 +115,7 @@ function CreatePost() {
             );
           })}
         </select>
+        <label className="subcategory-select">Select a subcategory:</label>
         <select
           onChange={(e) => {
             filterCategory(e.target.value);
@@ -133,12 +136,13 @@ function CreatePost() {
           })}
         </select>
 
-        <button type="submit">Create Post</button>
+        <button type="submit" className="submit-button">Create Post</button>
       </form>
       <Link to={`/user/${userId}/profile`}>
       <button>Back to My Profile</button>
       </Link>
-    </div>
+      </div>
+    
   );
 }
 

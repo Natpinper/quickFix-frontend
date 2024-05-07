@@ -1,9 +1,80 @@
-.Create-post-form-container{
-display: flex;
-flex-direction: column;
+.Create-post-form-container {
+  display: flex;
+  flex-direction: column;
+  font-family: "Alfabet";
+  width: 60%;
+  justify-content: center;
+  margin-left: 20%;
+  min-height: fit-content;
+  margin-top: 26%;
+  margin-bottom: 10%;
+  gap: 2px;
 }
 
-.form-create{
-    display: flex;
-    flex-direction: column
+.form-create {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+  
+}
+
+.Create-post-form-container h2 {
+  font-size: 24px;
+  color: #955621;
+}
+
+label {
+  margin-bottom: 2px;
+  margin-top: 2px;
+  color: #394726;
+  font-size: 16px;
+  text-align: left;
+}
+
+input {
+  font-size: 14px;
+  color: #487da0;
+  width: 94%;
+  border: #955621 solid 2px;
+  border-radius: 6px;
+  margin-top: 3%;
+  margin-bottom: 5%;
+  margin-left: 0%;
+  margin-right: 10%;
+  padding: 10px;
+}
+
+textarea {
+  font-size: 14px;
+  color: #487da0;
+  width: 94%;
+  border: #955621 solid 2px;
+  border-radius: 6px;
+  margin-top: 1%;
+  margin-bottom: 5%;
+  margin-left: 0%;
+  margin-right: 10%;
+  padding: 10px;
+}
+
+select {
+  border: solid 2px #955621;
+  border-radius: 6px;
+  width: 98%;
+  padding: 6px;
+  font-family: "Alfabet";
+  font-size: 14px;
+  color: #487da0;
+  margin-bottom: 5%;
+}
+
+.submit-button{
+    margin-left: 36.3%;
+    width: 200px;
+   
+}
+
+button{
+    
+    width: 200px; 
 }

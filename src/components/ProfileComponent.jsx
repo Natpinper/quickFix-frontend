@@ -3,10 +3,11 @@ import PostCard from "./PostCard";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import PostCardUser from "./PostCardUser";
+import "../styles/userProfile.css"
 function ProfileComponent({ name, email, password, location, posts, _id }) {
   return (
     <div className="profile-layout">
-      <h1 className="myName">Name: {name}</h1>
+      <h1 className="myName">{name}</h1>
       <h3 className="myEmail">email: {email}</h3>
       <h3 className="myLocation">Location: {location}</h3>
       <div className="post-list-profile">
@@ -19,7 +20,7 @@ function ProfileComponent({ name, email, password, location, posts, _id }) {
               title={post.title}
               description={post.description}
               price={post.price}
-              service={post.service.category}
+              service={post.service}
             />
           ))}
       </div>

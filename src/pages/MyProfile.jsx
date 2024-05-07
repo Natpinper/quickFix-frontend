@@ -61,7 +61,7 @@ function MyProfile() {
         
       </div>
      
-
+<div className="User-buttons">
       <Link to={`/user/${userId}/post/create`}>
         <button>Create new post</button>
       </Link>
@@ -69,6 +69,7 @@ function MyProfile() {
       <Link to={`/user/${userId}/profile/edit`}>
         <button>Edit user</button>
       </Link>
+      </div>
     </div>
   );
 }

@@ -138,7 +138,7 @@ function FilterByLocationPosts() {
           ))}
         </div>
       ):(
-        <p>No results found.</p>
+        <p style={{marginLeft:"45%"}}>No results found.</p>
       )}
       </div>
        
