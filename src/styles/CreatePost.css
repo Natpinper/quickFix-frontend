@@ -61,10 +61,11 @@ select {
   border: solid 2px #955621;
   border-radius: 6px;
   width: 98%;
-  padding: 6px;
+  padding: 10px;
   font-family: "Alfabet";
   font-size: 14px;
   color: #487da0;
+  margin-top: 1%;
   margin-bottom: 5%;
 }
 
