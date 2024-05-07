@@ -9,7 +9,7 @@ const API_URL = "http://localhost:5005";
 function LogIn(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState(undefined);
+  const [errorMessage, setErrorMessage] = useState(null);
 
 
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ function LogIn(props) {
       navigate("/")
     })
     .catch((error)=>{
-      const errorDescription = error.response.data.errorMessage
+      const errorDescription = error.response.data.message
       setErrorMessage(errorDescription)
     })
   };
@@ -42,15 +42,15 @@ function LogIn(props) {
 
       <form onSubmit={handleLogin} className="Login-Form">
         <label>Email:</label>
-        <input type="email" name="email" value={email} onChange={handleEmail} />
+        <input required="true" type="email" name="email" value={email} onChange={handleEmail} />
 
         <label>Password:</label>
-        <input type="password" name="password" value={password} onChange={handlePassword} />
+        <input required="true" type="password" name="password" value={password} onChange={handlePassword} />
 
         <button type="submit" className="login-button">Login</button>
       </form>
 
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      {errorMessage && <p className="error-message" style={{color:"red"}}>{errorMessage}</p>}
 
       <p className="signup-p">Don´t have an account yet?</p>
       <Link className="link-login" to={"/signup"}>Sign Up</Link>

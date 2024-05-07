@@ -76,7 +76,7 @@ function SignUpPage(props) {
   const [repeatPassword, setRepeatPassword] = useState("");
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
-  const [errorMessage, setErrorMessage] = useState(undefined);
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const navigate = useNavigate();
 
@@ -156,6 +156,7 @@ function SignUpPage(props) {
           <select
             name="location"
             className="location-select"
+            required={true}
             value={location}
             onChange={handleLocation}
           >
@@ -172,7 +173,7 @@ function SignUpPage(props) {
           Sign Up
         </button>
       </form>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      {errorMessage && <p className="error-message" style={{color:"red"}}>{errorMessage}</p>}
       <div className="lowest-p">
         <p>Already have account?</p>
         <Link className="link-signup" to={"/login"}>
