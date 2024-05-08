@@ -5,6 +5,7 @@ import userService from "../services/User.service";
 import { AuthContext } from "../context/auth.context";
 import { confirmAlert } from "react-confirm-alert";
 import axios from "axios";
+import "../styles/userProfile.css"
 
 function MyProfile() {
   const { user, setUser, isLoggedIn, removeToken, logOut, authenticateUser } =
@@ -91,15 +92,16 @@ function MyProfile() {
           imageUrl={user.imageUrl}
         />
       </div>
-      <form onSubmit={handleSubmit}>
-        <label>Profile picture:</label>
-        <input
+      <div className="all-buttons-user">
+      <form onSubmit={handleSubmit} className="profile-picture-submit">
+      <input
+        className="picture-input"
           type="file"
           onChange={(e) => {
             handleFileUpload(e);
           }}
         />
-        <button type="submit">Upload picture</button>
+        <button type="submit" className="submit-picture-button">Upload picture</button>
       </form>
       <div className="User-buttons">
         <Link to={`/user/${userId}/post/create`}>
@@ -109,6 +111,7 @@ function MyProfile() {
         <Link to={`/user/${userId}/profile/edit`}>
           <button>Edit user</button>
         </Link>
+      </div>
       </div>
     </div>
   );

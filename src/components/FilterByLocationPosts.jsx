@@ -78,7 +78,7 @@ function FilterByLocationPosts() {
   }, []);
 
   const fetchData = (value) => {
-    fetch("http://localhost:5005/api/post")
+    fetch("http://localhost:5005/api/post/location")
       .then((response) => response.json())
       .then((json) => {
         const filteredPosts = json.filter((post) => {

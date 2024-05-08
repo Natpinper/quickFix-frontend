@@ -7,10 +7,14 @@ import "../styles/userProfile.css"
 function ProfileComponent({ name, email, password, location, posts, _id, imageUrl }) {
   return (
     <div className="profile-layout">
-    <img src={imageUrl}/>
+    <div className="picture-and-details">
+    <img src={imageUrl} className="profile-picture"/>
+    <div className="user-details">
       <h1 className="myName">{name}</h1>
       <h3 className="myEmail">email: {email}</h3>
       <h3 className="myLocation">Location: {location}</h3>
+      </div>
+      </div>
       <div className="post-list-profile">
         {posts &&
           posts.map((post) => (

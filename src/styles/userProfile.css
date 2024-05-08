@@ -3,6 +3,13 @@
     flex-direction: column;
     width: 100%;
     font-family: "Alfabet";
+   
+   
+}
+.My-Profile-container{
+  margin-top: 4%;
+  margin-bottom: 8%;
+
 }
 
 .User-buttons{
@@ -11,7 +18,7 @@
     justify-content:center;
     width: 100%;
     gap: 30px;
-    margin-top: 20px;
+    margin-top: 80px;
 
 }
 button{
@@ -24,7 +31,7 @@ button{
     color: #955621;
     border:#955621 solid 2px;
     border-radius: 10px;
-    
+    cursor: pointer;
 }
 
 .myName{
@@ -79,4 +86,55 @@ button{
   }
   
 
-  
+  .profile-picture{
+    width: 150px; /* Set the width of the profile picture */
+    height: 150px; /* Set the height of the profile picture */
+    border-radius: 50%; /* Make it round by setting border-radius to 50% */
+    object-fit: cover; /* Ensure the image covers the entire container */
+    border: 2px solid #ffffff; /* Add a border around the profile picture */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .picture-and-details{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    gap: 100px;
+  }
+
+  .profile-picture-submit {
+    display: flex;
+    flex-direction: column;
+    justify-content:left;
+   margin-left: 28%;
+  }
+  .picture-input {
+    margin-bottom: 10px;
+    width: 200px;
+   
+  }
+
+  .all-buttons-user{
+    display: flex;
+    flex-direction: column;
+    
+  }
+
+  .submit-picture-button{
+    width: 90px;
+    padding: 10px;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: "Alfabet";
+    border: none;
+    background-color: transparent;
+    color: #955621;
+    border: #955621 solid 1px;
+    margin-left: 7%;
+    
+  }
+
+  .submit-picture-button:hover {
+    background-color: #d1963a; /* Darken the background color on hover */
+  }
+
