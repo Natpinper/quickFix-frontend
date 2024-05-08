@@ -8,12 +8,12 @@ function Navbar() {
   const { userId } = useParams();
   return (
     <nav className="navbar">
-      <div className="navbar-right">
+      <div className="navbar-left">
         <Link to="/">
           <button>
             <img
-              src="./images/Mesa de trabajo 4.png"
-              alt="´logopic"
+              src="https://res.cloudinary.com/dvtmccjmf/image/upload/v1715202629/movie-gallery/ooknxf0lie1byqo0o9jo.png"
+              alt="logopic"
               className="logo"
             ></img>
           </button>
@@ -23,11 +23,11 @@ function Navbar() {
         </Link>
       </div>
       {!isLoggedIn && (
-        <div className="navbar-left">
-          <Link to="/about-us">
+        <div className="navbar-right">
+          <Link to="/about-us" className="link">
             <button className="about-us">About us</button>
           </Link>
-          <Link to="/login">
+          <Link to="/login" className="link">
             <button className="user-icon">
               <FaUserCircle></FaUserCircle>
             </button>
@@ -35,15 +35,15 @@ function Navbar() {
         </div>
       )}
       {isLoggedIn && (
-        <div className="navbar-left">
-          <Link to="/about-us">
+        <div className="navbar-right">
+          <Link to="/about-us" className="link">
             <button className="about-us">About us</button>
           </Link>
-          <Link to={`/user/${user._id}/profile`}>
+          <Link to={`/user/${user._id}/profile`} className="link">
             <button className="my-profile-button">My Profile</button>
           </Link>
           <button onClick={logOut} className="user-logout">
-            <Link to="/">
+            <Link to="/" className="link">
               <FaSignOutAlt className="sign-out-icon"></FaSignOutAlt>
             </Link>
           </button>

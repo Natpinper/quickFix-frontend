@@ -5,15 +5,13 @@ nav {
   right: 0;
   top: 0;
   width: 100%;
+  height: fit-content;
   background-color: #d1963a;
-  padding:0;
   z-index: 100;
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
- 
 }
 
 nav button {
@@ -25,35 +23,27 @@ nav button {
   font-weight: 530;
 }
 
-.user-icon{
+.user-icon {
   font-size: 25px;
 }
 
-.navbar-left{
-  margin-right: 70px;
+.navbar-left {
+  margin-right: 20px;
   display: flex;
   align-items: center;
-  justify-content:center;
-  gap: 20px;
-  
-
 }
-.navbar-right{
-  margin-left: 70px;
-  padding: 0px;
+.navbar-right {
+  margin-right: 20px;
   display: flex;
   align-items: center;
-  
 }
 
-.logo{
+.logo {
   width: 80px;
-  height: auto; 
-
+  height: auto;
 }
 
-
-.user-logout{
+.user-logout {
   background-color: #d1963a;
   color: #394726;
   border: none;
@@ -62,28 +52,27 @@ nav button {
   font-weight: 530;
 }
 
-.sign-out-icon{
+.sign-out-icon {
   font-size: 30px;
 }
 
-.site-name{
+.site-name {
   font-family: "Berlin Sans FB";
-  font-style:normal;
+  font-style: normal;
   font-size: 28px;
   color: #394726;
   text-decoration: none;
   text-transform: uppercase;
-  
 }
 
-.about-us{
+.about-us {
   font-family: "helvetica";
   font-size: 13px;
   font-weight: bold;
   font-style: normal;
   color: #394726;
 }
-.my-profile-button{
+.my-profile-button {
   font-family: "helvetica";
   font-size: 13px;
   font-weight: bold;
