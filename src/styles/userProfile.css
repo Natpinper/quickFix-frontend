@@ -3,14 +3,19 @@
     flex-direction: column;
     width: 100%;
     font-family: "Alfabet";
+    height: max-content;
    
    
 }
 .My-Profile-container{
-  margin-top: 4%;
-  margin-bottom: 8%;
+  margin-top:30%;
+  margin-bottom: 12%;
 
 }
+.user-details{
+  align-items: center;
+}
+
 
 .User-buttons{
     display: flex;
@@ -94,23 +99,28 @@ button{
     border: 2px solid #ffffff; /* Add a border around the profile picture */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
+  .profile-picture-container{
+    justify-content:left;
+  }
 
   .picture-and-details{
     display: flex;
     flex-direction: row;
     justify-content:center;
     gap: 100px;
+  
   }
 
   .profile-picture-submit {
     display: flex;
     flex-direction: column;
     justify-content:left;
-   margin-left: 28%;
+  
   }
   .picture-input {
     margin-bottom: 10px;
     width: 200px;
+    font-size: 10px;
    
   }
 
@@ -130,7 +140,7 @@ button{
     background-color: transparent;
     color: #955621;
     border: #955621 solid 1px;
-    margin-left: 7%;
+    margin-left: 32%;
     
   }
 
@@ -138,3 +148,13 @@ button{
     background-color: #d1963a; /* Darken the background color on hover */
   }
 
+.myPosts{
+  color: #394726;
+  font-size: 24px;
+}
+
+.post-list-profile{
+  margin-top: 40px;
+ justify-self: left;
+
+}

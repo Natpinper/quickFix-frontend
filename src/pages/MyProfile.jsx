@@ -82,7 +82,7 @@ function MyProfile() {
   return (
     <div className="My-Profile-container">
       <div className="user-details">
-        <ProfileComponent
+       <ProfileComponent
           id={user._id}
           name={user.name}
           email={user.email}
@@ -90,29 +90,12 @@ function MyProfile() {
           location={user.location}
           posts={user.posts}
           imageUrl={user.imageUrl}
+          handleFileUpload={handleFileUpload}
+  handleSubmit={handleSubmit}
+  submitDelete={submitDelete}
         />
       </div>
-      <div className="all-buttons-user">
-      <form onSubmit={handleSubmit} className="profile-picture-submit">
-      <input
-        className="picture-input"
-          type="file"
-          onChange={(e) => {
-            handleFileUpload(e);
-          }}
-        />
-        <button type="submit" className="submit-picture-button">Upload picture</button>
-      </form>
-      <div className="User-buttons">
-        <Link to={`/user/${userId}/post/create`}>
-          <button>Create new post</button>
-        </Link>
-        <button onClick={submitDelete}>Delete User</button>
-        <Link to={`/user/${userId}/profile/edit`}>
-          <button>Edit user</button>
-        </Link>
-      </div>
-      </div>
+      
     </div>
   );
 }
