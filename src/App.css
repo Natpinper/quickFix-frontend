@@ -1,5 +1,5 @@
 #root {
-   margin-top: 10%;
+  margin-top: 0%;
   text-align: center;
   color: #394726;
   width: 100%;
@@ -8,18 +8,13 @@
 .App{
   margin-top: 20px;
   width: 100%;
+  display: block;
   text-align: center;
   justify-content: center;
 
 }
 
-.App{
-  margin-top: 20px;
-  width: 100%;
-  text-align: center;
-  justify-content: center;
 
-}
 @font-face {
   font-family: "Alfabet";
   src: url('fontspring-demo-alfabet-thin-webfont.woff2') format('woff2'),

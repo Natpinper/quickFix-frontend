@@ -6,9 +6,8 @@
   align-items: center;
   margin: 0 auto;
   width: 75%;
-  margin-top: 1640px;
-  margin-bottom: 160px;
-
+margin-top: 2250px
+  
 }
 
 .PostList {
@@ -46,6 +45,7 @@
   text-align: left;
   position: sticky;
   justify-content: space-around;
+  
 }
 .filterSelect {
   display: flex;
