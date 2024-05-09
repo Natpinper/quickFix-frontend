@@ -1,3 +1,4 @@
+
 .homepage-container {
   color: #394726;
   display: flex;
@@ -5,8 +6,9 @@
   align-items: center;
   margin: 0 auto;
   width: 75%;
-  margin-top: 2220px;
-  margin-bottom: 0px;
+  margin-top: 1640px;
+  margin-bottom: 160px;
+
 }
 
 .PostList {
