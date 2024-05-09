@@ -37,7 +37,7 @@ function NewNavBar() {
           </div>
         )}
         {isLoggedIn && (
-          <div className="navbar-right" style={{float:"right", marginRight:"60px"}}>
+          <div className="navbar-right" style={{float:"right", marginRight:"60px",  paddingTop:"30px"}}>
             <li>
               <a href="/about-us" className="about-us">about us</a>
             </li>
