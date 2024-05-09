@@ -1,10 +1,9 @@
 import React from "react";
-import PostCard from "./PostCard";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import PostCardUser from "./PostCardUser";
 import "../styles/userProfile.css";
-import MyProfile from "../pages/MyProfile";
+
 
 function ProfileComponent({
   name,
@@ -57,7 +56,7 @@ function ProfileComponent({
       </div>
 
       <div className="post-list-profile">
-        <h2 className="myPosts">My Posts</h2>
+        <h3 className="myPosts">My Posts</h3>
 
         {posts &&
           posts.map((post) => (
