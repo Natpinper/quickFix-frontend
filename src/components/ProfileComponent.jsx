@@ -62,7 +62,7 @@ function ProfileComponent({
           posts.map((post) => (
             <PostCardUser
               key={post._id}
-              userId={post.user}
+              userId={post.user._id}
               _id={post._id}
               title={post.title}
               description={post.description}
