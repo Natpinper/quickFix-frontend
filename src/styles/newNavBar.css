@@ -8,6 +8,7 @@ ul {
   position: fixed;
   top: 0;
   height: fit-content;
+  
 }
 
 .logo {
@@ -62,6 +63,7 @@ li a {
     cursor: pointer;
     font-size: 14px;
     font-weight: 530;
+    background-color: transparent;
   }
   .navbar-left{
     display: flex;

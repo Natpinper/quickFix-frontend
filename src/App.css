@@ -4,6 +4,7 @@
   color: #394726;
   width: 100%;
   justify-content: center;
+  width: 100%;
 }
 .App{
   margin-top: 20px;
@@ -11,7 +12,6 @@
   display: block;
   text-align: center;
   justify-content: center;
-
 }
 
 
