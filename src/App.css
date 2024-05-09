@@ -1,8 +1,16 @@
 #root {
-  margin-top: 10%;
+   margin-top: 10%;
   text-align: center;
   color: #394726;
   width: 100%;
+  justify-content: center;
+}
+.App{
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+
 }
 
 .App{
