@@ -2,11 +2,11 @@
   display: flex;
   flex-direction: column;
   font-family: "Alfabet";
-  width: 60%;
+  width: 50%;
+  margin: 0 auto;
   justify-content: center;
-  margin-left: 20%;
   min-height: fit-content;
-  margin-top: 34%;
+  margin-top: 32%;
   margin-bottom: 10%;
   gap: 2px;
 }
@@ -70,7 +70,7 @@ select {
 }
 
 .submit-button{
-    margin-left: 36.3%;
+    margin: auto;
     width: 200px;
    
 }
@@ -78,6 +78,7 @@ select {
 button{
     
     width: 200px; 
+    margin: auto;
 }
 
 .edit-user-info{
