@@ -28,6 +28,9 @@ class PostService {
   getAllPosts = () => {
     return this.api.get('/api/post');
   };
+  getPostByLocation= () => {
+    return this.api.get('/api/post/location')
+  }
  
   // GET /api/post/:id
   getPost = id => {

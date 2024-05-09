@@ -1,8 +1,16 @@
 #root {
   margin-top: 0%;
- text-align: center;
+  text-align: center;
   color: #394726;
   width: 100%;
+  justify-content: center;
+}
+.App{
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+
 }
 
 @font-face {

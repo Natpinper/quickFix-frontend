@@ -9,7 +9,7 @@ function NewNavBar() {
   const { userId } = useParams();
   return (
     <div>
-      <ul className="Navbar" >
+      <ul className="Navbar">
         <div className="navbar-left" style={{float:"left", marginLeft:"40px"}} >
           <li>
             <a href="/">

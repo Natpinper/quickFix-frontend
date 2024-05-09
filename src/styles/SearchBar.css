@@ -3,6 +3,8 @@
   align-items: center;
   justify-content: center;
   position: static;
+  
+  height: min-content;
 }
 .searchbar-outter {
   background-color: white;
@@ -10,8 +12,6 @@
   padding: 0 15px;
   box-shadow: 0px 0px 4px #487da0;
   display: flex;
-  margin-top: 10px;
-  z-index: 101;
   width: 100%;
 }
 .searchbar-input {

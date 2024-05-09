@@ -75,12 +75,13 @@ function FilterByLocationPosts() {
 
   useEffect(() => {
     fetchData(location);
-  }, []);
+  }, [location]);
 
   const fetchData = (value) => {
     fetch("http://localhost:5005/api/post/location")
       .then((response) => response.json())
       .then((json) => {
+        console.log(json, "this line")
         const filteredPosts = json.filter((post) => {
           return (
             value &&
@@ -88,9 +89,7 @@ function FilterByLocationPosts() {
             post.user.location.toLowerCase() === value.toLowerCase()
           );
         });
-        console.log(value);
-        console.log(location);
-        console.log(filteredPosts);
+        
         setFilteredPosts(filteredPosts);
       })
       .catch((error) => {
