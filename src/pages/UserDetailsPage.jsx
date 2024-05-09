@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import userService from "../services/User.service";
 import { Link, useParams } from "react-router-dom";
 import PostCard from "../components/PostCard";
+import "../styles/UserDetailsPage.css"
+import { FaLocationArrow } from "react-icons/fa";
 
 const API_URL = "http://localhost:5005";
 
@@ -27,13 +29,16 @@ function UserDetailsPage(props) {
   }, []);
 
   return (
-    <div className="UserDetails">
+    <div className="profile-layout">
       {user && (
         <>
-          <h1 className="name">{user.name}</h1>
-          <h2 className="location">{user.location}</h2>
-          <h3 className="rating">{user.rating}</h3>
-          <div>
+        <div className="profile-picture-container">
+        <img src={user.imageUrl} className="profile-picture"/>
+        <h1 className="myName">{user.name}</h1>
+          <h3 className="myLocation"><FaLocationArrow/> {user.location}</h3>
+        </div>
+          
+          <div className="PostList">
             {user.posts &&
               user.posts.map((post) => (
                 <PostCard

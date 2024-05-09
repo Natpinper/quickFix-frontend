@@ -48,10 +48,7 @@ button{
   border-radius: 10px;
   cursor: pointer;
 }
-.myName {
-  font-size: 30px;
-  color: #394726;
-}
+
 
 .confirm-alert-overlay {
   display: flex;
@@ -151,5 +148,5 @@ button{
   margin-top: 60px;
   text-align: center;
   width: 50%;
-  margin-left: 200px;
+  margin-left: 235px;
 }

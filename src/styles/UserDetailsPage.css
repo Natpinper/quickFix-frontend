@@ -1,26 +1,38 @@
-.UserDetails{
-    font-family: "Alfabet";
+.profile-layout {
     display: flex;
     flex-direction: column;
+    width: 60%;
+    font-family: "Alfabet";
+    height: fit-content;
+    margin: 0 auto;
+    margin-top: 40%;
+    margin-bottom: 12%;
     align-items: center;
     justify-content: center;
-}
-.name-user-details{
-    color: #487da0;
-    font-size: 28px;
-}
-.location-user-details{
+  }
+.myName {
+    font-size: 30px;
     color: #394726;
-    font-size: 18px;
-}
-.rating{
-    color:#394726 ;
-    font-size: 16px;
+  }
+
+.rating {
+  color: #394726;
+  font-size: 16px;
 }
 
-.user-posts{
-    display: flex;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    justify-content: space-around;
+.user-posts {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-around;
 }
+
+.profile-picture {
+    width: 150px; /* Set the width of the profile picture */
+    height: 150px; /* Set the height of the profile picture */
+    border-radius: 50%; /* Make it round by setting border-radius to 50% */
+    object-fit: cover; /* Ensure the image covers the entire container */
+    border: 2px solid #ffffff; /* Add a border around the profile picture */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+ 
