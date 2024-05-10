@@ -4,6 +4,7 @@ import "../styles/SearchBar.css";
 import postService from "../services/Post.service";
 import PostCard from "./PostCard";
 import axios from "axios";
+const API_URL = "https://quickfix-backend.adaptable.app"
 function SearchBar() {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
@@ -12,7 +13,7 @@ function SearchBar() {
     fetchData();
   }, []);
   const fetchData = (value) => {
-    fetch("http://localhost:5005/api/post")
+    fetch(`${API_URL}/api/post`)
       .then((response) => response.json())
       .then((json) => {
         const results = json.filter((post) => {
