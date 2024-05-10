@@ -37,36 +37,36 @@ Edit Post (private)
 
 ## Components
 
-Navbar
-Footer
-Search bar
-Filter by location
-Post card
+-Navbar
+-Footer
+-Search bar
+-Filter by location
+-Post card
 
 # Server
 ## Models
 
 User model: 
-email: String, required   
-password: String, required
-imageUrl: String
-name: String, required
-location: String, required
-rating: Number
-posts: ObjectId: "Post" 
-service: ObjectId: "Service"
+-email: String, required   
+-password: String, required
+-imageUrl: String
+-name: String, required
+-location: String, required
+-rating: Number
+-posts: ObjectId: "Post" 
+-service: ObjectId: "Service"
 
 Post model:
-title:String, required
-service: ObjectId: "Service"
-description: String, required
-price: Number
-user:ObjectId: "User"
+-title:String, required
+-service: ObjectId: "Service"
+-description: String, required
+-price: Number
+-user:ObjectId: "User"
 
 Services model:
-category: String, enum, required
-subcategory: String, enum, required
-posts: ObjectId: "Post" 
+-category: String, enum, required
+-subcategory: String, enum, required
+-posts: ObjectId: "Post" 
 
 # API Endpoints
 
