@@ -90,7 +90,10 @@ posts: ObjectId: "Post"
 
 # Git
 [Link to my backend repository](https://github.com/Natpinper/quickFix-backend)
+
 [Link to my frontend repository](https://github.com/Natpinper/quickFix-frontend)
+
+[Link to deployed site](https://quickfixer.netlify.app)
 
 
 # Slides
