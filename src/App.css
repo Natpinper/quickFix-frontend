@@ -1,11 +1,21 @@
 #root {
-  margin-left: 10%;
   margin-top: 0%;
   text-align: center;
-  margin-right: 10%;
   color: #394726;
   width: 100%;
+  justify-content: center;
+  width: 100%;
 }
+.App{
+  margin: 0 auto;
+  margin-top: 300px;
+  width: 100%;
+  display: block;
+  text-align: center;
+  justify-content: center;
+  height: 100%;
+}
+
 
 @font-face {
   font-family: "Alfabet";

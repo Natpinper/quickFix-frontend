@@ -28,11 +28,20 @@ class PostService {
   getAllPosts = () => {
     return this.api.get('/api/post');
   };
+  getPostByLocation= () => {
+    return this.api.get('/api/post/location')
+  }
  
   // GET /api/post/:id
   getPost = id => {
     return this.api.get(`/api/post/${id}`);
   };
+
+  //get /api/:userId/profile/post/
+  getPostFromUser = id => {
+    return this.api.get(`/api/user/post/${id}`)
+  }
+
  
   // PUT /api/post/:id
   updatePost = (id, requestBody) => {

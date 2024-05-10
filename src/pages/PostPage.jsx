@@ -6,6 +6,7 @@ import postService from "../services/Post.service";
 import { FaLocationArrow, FaHeart } from "react-icons/fa";
 import "../styles/PostDetailPage.css";
 
+
 const API_URL = "http://localhost:5005";
 
 function PostPage(props) {
@@ -41,16 +42,17 @@ function PostPage(props) {
     <div className="PostDetails">
       {post && (
         <>
-          <h1 className="title">{post.title}</h1>
-          <Link to={`/user/${post.user._id}`}><h2 className="user-name">{post.user.name}</h2></Link>
-          <h2 className="category">{post.service.category}</h2>
-          <h3 className="subcategory">{post.service.subcategory}</h3>
-          <p className="description">{post.description}</p>
-          <div className="location-container">
-            <FaLocationArrow className="location-icon"></FaLocationArrow>
-            <h3 className="location">{post.user.location}</h3>
-          </div>
-          <h3 className="price">{post.price} €/hour</h3>
+        <h1 className="title-details">{post.title}</h1>
+        <Link to={`/user/${post.user._id}`}><h2 className="user-name">{post.user.name}</h2></Link>
+        <h2 className="category">{post.service.category}</h2>
+        <h3 className="subcategory">{post.service.subcategory}</h3>
+        <p className="description">{post.description}</p>
+        <div className="location-container">
+          <FaLocationArrow className="location-icon"></FaLocationArrow>
+          <h3 className="location">{post.user.location}</h3>
+        </div>
+        <h3 className="price">{post.price} €/hour</h3>
+
           <button
             className={liked ? "button-like clicked" : "button-like"}
             onClick={increaseRate}
@@ -66,3 +68,5 @@ function PostPage(props) {
 }
 
 export default PostPage;
+
+

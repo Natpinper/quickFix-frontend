@@ -17,12 +17,13 @@ function AboutUs() {
       <h2 className='users-review-title'>USER´S REVIEWS</h2>
       <p className='users-review-p'> Hear What Our Users Have to Say!</p>
       <div className='reviewspng'>
-      <img className="Review1" src='./images/Review01.png'></img>
-      <img className="Review2" src='./images/Review02.png'></img>
-      <img className="Review3" src='./images/Review03.png'></img>
+      <img className="Review1" src='https://res.cloudinary.com/dvtmccjmf/image/upload/v1715335804/movie-gallery/afhxjaa5ajprhcx6j5bm.png'></img>
+      <img className="Review2" src='https://res.cloudinary.com/dvtmccjmf/image/upload/v1715335862/movie-gallery/wvxaz6ud6tp3niemiz69.png'></img>
+      <img className="Review3" src='https://res.cloudinary.com/dvtmccjmf/image/upload/v1715335884/movie-gallery/kkdwd1hyalj54mir18zc.png'></img>
       </div>
       </div>
       </div>
+     
   )
 }
 

@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useEffect, useState, useContext } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import userService from "../services/User.service";
+import { AuthContext } from "../context/auth.context";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import authService from "../services/auth.service";
-import "../styles/SignupPage.css";
-import "../styles/LoginPage.css";
+import "../styles/CreatePost.css"
 
 const locationArray = [
   { city: "Almería", region: "Andalusia" },
@@ -69,121 +68,82 @@ const locationArray = [
   { city: "Ceuta", region: "Ceuta" },
   { city: "Melilla", region: "Melilla" },
 ];
-
-function SignUpPage(props) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [repeatPassword, setRepeatPassword] = useState("");
+function EditUser() {
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
-  const [errorMessage, setErrorMessage] = useState(null);
 
-  const navigate = useNavigate();
-
+  const { user, setUser, authenticateUser } = useContext(AuthContext);
   const cityArray = locationArray.map((location) => location.city).sort();
 
-  const handleEmail = (e) => setEmail(e.target.value);
-  const handlePassword = (e) => setPassword(e.target.value);
-  const handleRepeatPassword = (e) => setRepeatPassword(e.target.value);
-  const handleName = (e) => setName(e.target.value);
-  const handleLocation = (e) => setLocation(e.target.value);
+  const { userId } = useParams();
+  const navigate = useNavigate();
 
-  const handleSignupSubmit = (e) => {
-    e.preventDefault();
-
-    if (password !== repeatPassword) {
-      setErrorMessage("Passwords do not match");
-      return;
-    }
-
-    const requestBody = { email, password, name, location };
-
-    authService
-      .signup(requestBody)
+  useEffect(() => {
+    userService
+      .getOneUser(userId)
       .then((response) => {
-        navigate("/login");
-        console.log(response);
+        const oneUser = response.data;
+        setName(oneUser.name);
+        setLocation(oneUser.location);
       })
-      .catch((error) => {
-        const errorDescription = error.response.data.message;
-        setErrorMessage(errorDescription);
+      .catch((err) => {
+        console.log(err);
       });
+  }, [userId]);
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    const requestBody = { name, location };
+
+    userService
+      .updateUser(userId, requestBody)
+      .then((response) => {
+        authenticateUser();
+        navigate(`/user/${userId}/profile`);
+        alert("User´s details have been updated");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  const handleChange = (e) => {
+    setLocation(e.target.value);
   };
 
   return (
-    <div className="SignupContainer">
-      <h1 className="form-title">Sign Up</h1>
-
-      <form className="Login-Form" onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input
-          required={true}
-          type="email"
-          name="email"
-          value={email}
-          onChange={handleEmail}
-        />
-
-        <label>Password:</label>
-        <input
-          required={true}
-          minLength={6}
-          type="password"
-          name="password"
-          value={password}
-          onChange={handlePassword}
-        />
-        <label>Repeat Password:</label>
-        <input
-          required={true}
-          minLength={6}
-          type="password"
-          name="repeatPassword"
-          value={repeatPassword}
-          onChange={handleRepeatPassword}
-        />
-
+ 
+    <div className="Create-post-form-container">
+    <h2 className="form-title">Edit user´s details</h2>
+      <form onSubmit={handleFormSubmit} className="form-create">
         <label>Name:</label>
         <input
-          required={true}
           type="text"
           name="name"
           value={name}
-          onChange={handleName}
+          onChange={(e) => setName(e.target.value)}
         />
-        <div className="location-signup">
-          <label>Location: </label>
-          <select
-            name="location"
-            className="location-select"
-            required={true}
-            value={location}
-            onChange={handleLocation}
-          >
-            <option value="">Select a location</option>
-            {cityArray.map((city, index) => (
-              <option key={index} value={city}>
-                {city}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <button className="signup-button" type="submit">
-          Sign Up
-        </button>
+        <label className="category-select">Location:</label>
+        <select
+          name="location"
+          className="category-select"
+          value={location}
+          onChange={handleChange}
+        >
+          <option value="">Select your location</option>
+          {cityArray.map((city, index) => (
+            <option key={index} value={city}>
+              {city}
+            </option>
+          ))}
+        </select>
+        <button type="submit" className="submit-button">Update User</button>
       </form>
-      {errorMessage && <p className="error-message" style={{color:"red"}}>{errorMessage}</p>}
-      <div className="lowest-p">
-        <p>Already have account?</p>
-        <Link className="link-signup" to={"/login"}>
-          Login
-        </Link>
-      </div>
+      <Link to={`/user/${userId}/profile`}>
+        <button>Back to My Profile</button>
+      </Link>
     </div>
+   
   );
 }
 
-export default SignUpPage;
-
-//authService.signup(requestBody)
+export default EditUser;

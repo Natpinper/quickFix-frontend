@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import "../styles/SearchBar.css";
 import postService from "../services/Post.service";
 import PostCard from "./PostCard";
-import "../styles/SearchBarResults.css";
+import axios from "axios";
 function SearchBar() {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);
@@ -38,7 +38,7 @@ function SearchBar() {
   };
   return (
     <div className="search-bar-container">
-      <div className="searchbar-outter">
+      <div className="searchbar-outter"/* style={{ marginTop: results.length > 0 ? "590px" : "300px" }}*/>
         <FaSearch id="search-icon" />
         <input className="searchbar-input"
           placeholder="Search..."
@@ -47,12 +47,13 @@ function SearchBar() {
         />
       </div>
 
-      <div className="search-bar-results">
-        <div className="PostListResults">
+      <div className="search-bar-results" >
+        <div className="PostListResults" >
           {results.map((post) => (
-              <PostCard key={post._id} {...post} />
+              <PostCard key={post._id} {...post}   />
           ))}
         </div>
+     
       </div>
     </div>
   );
