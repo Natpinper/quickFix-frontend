@@ -66,6 +66,7 @@ const locationArray = [
   { city: "Ceuta", region: "Ceuta" },
   { city: "Melilla", region: "Melilla" },
 ];
+ const API_URL = https://quickfix-backend.adaptable.app
 function FilterByLocationPosts() {
   const [input, setInput] = useState("");
   const [location, setLocation] = useState("Barcelona");
@@ -78,7 +79,7 @@ function FilterByLocationPosts() {
   }, []);
 
   const fetchData = (value) => {
-    fetch("http://localhost:5005/api/post/location")
+    fetch(`${API_URL}/api/post/location`)
       .then((response) => response.json())
       .then((json) => {
         console.log(json, "this line")
