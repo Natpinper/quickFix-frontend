@@ -5,7 +5,7 @@ import PostCard from "../components/PostCard";
 import "../styles/UserDetailsPage.css"
 import { FaLocationArrow } from "react-icons/fa";
 
-const API_URL = "http://localhost:5005";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function UserDetailsPage(props) {
   const [user, setUser] = useState(null);

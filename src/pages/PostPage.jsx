@@ -7,7 +7,7 @@ import { FaLocationArrow, FaHeart } from "react-icons/fa";
 import "../styles/PostDetailPage.css";
 
 
-const API_URL = "http://localhost:5005";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function PostPage(props) {
   const [post, setPost] = useState(null);

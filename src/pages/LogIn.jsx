@@ -5,7 +5,7 @@ import { AuthContext } from "../context/auth.context";
 import authService from "../services/auth.service";
 import "../styles/LoginPage.css"
 
-const API_URL = "http://localhost:5005";
+const API_URL = import.meta.env.VITE_API_URL;
 function LogIn(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

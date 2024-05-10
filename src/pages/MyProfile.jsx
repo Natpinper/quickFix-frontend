@@ -7,6 +7,7 @@ import { confirmAlert } from "react-confirm-alert";
 import axios from "axios";
 import "../styles/userProfile.css"
 
+const API_URL = import.meta.env.VITE_API_URL;
 function MyProfile() {
   const { user, setUser, isLoggedIn, removeToken, logOut, authenticateUser } =
     useContext(AuthContext);
@@ -66,7 +67,7 @@ function MyProfile() {
     // req.body to .create() method when creating a new movie in '/api/movies' POST route
     uploadData.append("imageUrl", e.target.files[0]);
     axios
-      .post("http://localhost:5005/api/upload", uploadData)
+      .post(`${API_URL}/api/upload`, uploadData)
       .then((response) => {
         // response carries "fileUrl" which we can use to update the state
         setImageUrl(response.data.fileUrl);
