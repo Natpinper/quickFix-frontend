@@ -109,7 +109,7 @@ function FilterByLocationPosts() {
   const hasResults = filteredPosts.length > 0
   return (
     <div className="location-search">
-      <form onSubmit={handleSubmit} className={`Location-form ${hasResults ? 'has-results' : ''}`} style={{display: "flex", flexDirection: "row", gap:"12px" }}>
+      <form onSubmit={handleSubmit} className="location-input">
         <label htmlFor="location" className="location-title"><h2 style={{color:"#394726", fontSize: "16px"}}>FIND IN YOUR AREA</h2> </label>
         <div className="filterSelect">
         <select 
@@ -129,7 +129,7 @@ function FilterByLocationPosts() {
         </div>
       </form>
 
-      <div className={`search-bar-results ${hasResults ? 'has-results' : ''}`}>
+      <div className="location-results">
       {hasResults ? (
         <div className="PostListResults" >
           {filteredPosts.map((post) => (
@@ -137,7 +137,7 @@ function FilterByLocationPosts() {
           ))}
         </div>
       ):(
-        <p style={{marginLeft:"45%"}}>No results found.</p>
+        <p style={{textAlign:"center"}}>No results found.</p>
       )}
       </div>
        
