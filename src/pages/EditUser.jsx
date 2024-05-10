@@ -111,7 +111,7 @@ function EditUser() {
   };
 
   return (
-    <div className="edit-user-info">
+ 
     <div className="Create-post-form-container">
     <h2 className="form-title">Edit user´s details</h2>
       <form onSubmit={handleFormSubmit} className="form-create">
@@ -142,7 +142,7 @@ function EditUser() {
         <button>Back to My Profile</button>
       </Link>
     </div>
-    </div>
+   
   );
 }
 
