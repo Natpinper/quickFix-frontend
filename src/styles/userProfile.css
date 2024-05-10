@@ -1,18 +1,13 @@
-.profile-layout {
+.My-Profile-container{
+  color: #394726;
   display: flex;
   flex-direction: column;
-  width: 60%;
-  font-family: "Alfabet";
-  height: fit-content;
-  margin: 0 auto;
-}
-.My-Profile-container {
-  margin-top: 34%;
-  margin-bottom: 12%;
-}
-.user-details {
   align-items: center;
+  margin: 20px auto;
+  width: 100%;
+  margin-bottom: 100px;
 }
+
 
 .User-buttons {
   display: flex;
@@ -108,7 +103,11 @@ button{
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 100px;
+  align-items: center;
+ gap: 100px;
+ padding: 0%;
+ width: 100%;
+ 
 }
 
 .profile-picture-submit {
@@ -141,12 +140,24 @@ button{
 
 .myPosts {
   color: #394726;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .post-list-profile {
-  margin-top: 60px;
   text-align: center;
-  width: 50%;
+  width: 20%;
+  border:solid #d1963a 2px;
+  padding: 20px;
 
+}
+.profile-container{
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+  justify-content: space-evenly;
+  gap: 80px;
+}
+
+.profile-left{
+  width: 70%;
 }

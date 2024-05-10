@@ -91,8 +91,8 @@ function MyProfile() {
           posts={user.posts}
           imageUrl={user.imageUrl}
           handleFileUpload={handleFileUpload}
-  handleSubmit={handleSubmit}
-  submitDelete={submitDelete}
+         handleSubmit={handleSubmit}
+        submitDelete={submitDelete}
         />
       </div>
       

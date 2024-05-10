@@ -1,8 +1,8 @@
 .link-to-posts{
     font-family: "Alfabet";
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
+    font-size: 14px;
+    text-align: justify;
+    text-decoration:underline;
     color: #487da0;
 }
 

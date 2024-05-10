@@ -7,7 +7,7 @@ function PostCardUser({ title, description, _id, service, price, userId }) {
     <div>
       <div >
         <Link to={`/user/${userId}/post/${_id}`} className="link-to-posts">
-          <h3>{title}</h3>
+          <h4>{title}</h4>
         </Link>
       
       </div>

@@ -20,7 +20,8 @@ function ProfileComponent({
   const { userId } = useParams();
 
   return (
-    <div className="profile-layout">
+<div className="profile-container">
+<div className="profile-left">
       <div className="picture-and-details">
         <div className="profile-picture-container">
           <img src={imageUrl} className="profile-picture" />
@@ -54,6 +55,7 @@ function ProfileComponent({
           </Link>
         </div>
       </div>
+      </div>
 
       <div className="post-list-profile">
         <h3 className="myPosts">My Posts</h3>
@@ -71,7 +73,8 @@ function ProfileComponent({
             />
           ))}
       </div>
-    </div>
+      </div>
+  
   );
 }
 
