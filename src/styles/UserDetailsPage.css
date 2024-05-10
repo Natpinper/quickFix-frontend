@@ -1,38 +1,31 @@
 .profile-layout {
+    font-family: "Alfabet";
+    color: #394726;
     display: flex;
     flex-direction: column;
-    width: 60%;
-    font-family: "Alfabet";
-    height: fit-content;
-    margin: 0 auto;
-    margin-top: 40%;
-    margin-bottom: 12%;
     align-items: center;
-    justify-content: center;
+    margin: 20px auto;
+    width: 100%;
+    margin-bottom: 100px;
+    
   }
 .myName {
     font-size: 30px;
     color: #394726;
   }
 
-.rating {
-  color: #394726;
-  font-size: 16px;
-}
-
-.user-posts {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
 .profile-picture {
-    width: 150px; /* Set the width of the profile picture */
-    height: 150px; /* Set the height of the profile picture */
-    border-radius: 50%; /* Make it round by setting border-radius to 50% */
-    object-fit: cover; /* Ensure the image covers the entire container */
-    border: 2px solid #ffffff; /* Add a border around the profile picture */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    object-fit: cover;
+    border: 2px solid #ffffff; 
+    box-shadow: 0 2px 4px #487da0;
   }
  
+  .PostList{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }

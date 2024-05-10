@@ -93,7 +93,7 @@ button{
   border-radius: 50%; /* Make it round by setting border-radius to 50% */
   object-fit: cover; /* Ensure the image covers the entire container */
   border: 2px solid #ffffff; /* Add a border around the profile picture */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px #487da0(0, 0, 0, 0.1);
 }
 .profile-picture-container {
   justify-content: left;
