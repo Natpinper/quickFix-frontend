@@ -1,15 +1,15 @@
 
 # QuickFix Project
 
-## Introduction
+# Introduction
 This application is designed to help users discover and connect with various local services in their area. Whether you're in need of a plumber, electrician, or just looking for a good nail technician, this app has got you covered.
 
-## Features
+# Features
 - Service Search: Easily search for local services based on your location and specific needs.
 - User Profile: Create and customize your user profile to save and handle your own services. 
 
-## Client
-# Routes
+# Client
+## Routes
 * / - Homepage
 * /about-us - About us 
 * /post/:postId - Post Detail 
@@ -22,7 +22,7 @@ This application is designed to help users discover and connect with various loc
 * /user/:userId/post/:postId - User´s post details
 * /user/:userId/post/:postId/edit - Edit post
 
-# Pages
+## Pages
 
 Home Page (public)
 About us Page (public)
@@ -35,40 +35,40 @@ Post Create Page (private)
 Edit User´s information Page (private)
 Edit Post (private)
 
-# Components
+## Components
 
-Navbar
-Footer
-Search bar
-Filter by location
-Post card
+-Navbar
+-Footer
+-Search bar
+-Filter by location
+-Post card
 
-## Server
-# Models
+# Server
+## Models
 
 User model: 
-email: String, required   
-password: String, required
-imageUrl: String
-name: String, required
-location: String, required
-rating: Number
-posts: ObjectId: "Post" 
-service: ObjectId: "Service"
+-email: String, required   
+-password: String, required
+-imageUrl: String
+-name: String, required
+-location: String, required
+-rating: Number
+-posts: ObjectId: "Post" 
+-service: ObjectId: "Service"
 
 Post model:
-title:String, required
-service: ObjectId: "Service"
-description: String, required
-price: Number
-user:ObjectId: "User"
+-title:String, required
+-service: ObjectId: "Service"
+-description: String, required
+-price: Number
+-user:ObjectId: "User"
 
 Services model:
-category: String, enum, required
-subcategory: String, enum, required
-posts: ObjectId: "Post" 
+-category: String, enum, required
+-subcategory: String, enum, required
+-posts: ObjectId: "Post" 
 
-## API Endpoints
+# API Endpoints
 
 | Route                    | HTTP Verb | Description                            |
 |--------------------------|-----------|----------------------------------------|
@@ -86,11 +86,15 @@ posts: ObjectId: "Post"
 | /:userId/profile/posts/:postId | GET   | Shows one post from user profile      |
 
 
-## Links
+# Links
 
-# Git
+## Git
 [Link to my backend repository](https://github.com/Natpinper/quickFix-backend)
+
 [Link to my frontend repository](https://github.com/Natpinper/quickFix-frontend)
 
+[Link to deployed site](https://quickfixer.netlify.app)
 
-# Slides
+
+## Slides
+[Link to my presentation slides](https://www.canva.com/design/DAGE16C2IF8/Koy3T_rEq-A9iEMzFh3-cA/view?utm_content=DAGE16C2IF8&utm_campaign=designshare&utm_medium=link&utm_source=editor)
