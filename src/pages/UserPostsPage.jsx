@@ -36,7 +36,7 @@ function UserPostsPage(props) {
 
   const deletePost = (postId)=>{
     postService.deletePost(postId).then(()=>{
-      navigate(`/user/${userId}/profile`)
+      navigate(`/user/${userId}/profile` )
       alert("The post has been deleted");
     })
   }
