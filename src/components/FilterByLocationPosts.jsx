@@ -87,8 +87,8 @@ function FilterByLocationPosts() {
           return (
             value &&
             post.user &&
-            post.user.location &&
-            post.user.location.toLowerCase() === value.toLowerCase()
+            post.user?.location &&
+            post.user?.location.toLowerCase() === value.toLowerCase()
           );
         });
         
