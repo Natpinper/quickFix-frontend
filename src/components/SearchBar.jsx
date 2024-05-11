@@ -4,7 +4,8 @@ import "../styles/SearchBar.css";
 import postService from "../services/Post.service";
 import PostCard from "./PostCard";
 import axios from "axios";
-const API_URL = "https://quickfix-backend.adaptable.app"
+
+const API_URL = import.meta.env.VITE_API_URL
 function SearchBar() {
   const [input, setInput] = useState("");
   const [results, setResults] = useState([]);

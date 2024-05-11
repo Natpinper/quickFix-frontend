@@ -66,7 +66,7 @@ const locationArray = [
   { city: "Ceuta", region: "Ceuta" },
   { city: "Melilla", region: "Melilla" },
 ];
- const API_URL = "https://quickfix-backend.adaptable.app";
+ const API_URL = import.meta.env.VITE_API_URL;
 function FilterByLocationPosts() {
   const [input, setInput] = useState("");
   const [location, setLocation] = useState("Barcelona");
@@ -86,6 +86,7 @@ function FilterByLocationPosts() {
         const filteredPosts = json.filter((post) => {
           return (
             value &&
+            post.user &&
             post.user.location &&
             post.user.location.toLowerCase() === value.toLowerCase()
           );

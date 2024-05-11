@@ -7,7 +7,7 @@ import "../styles/HomePage.css"
 import FilterHomePage from '../components/FilterHomePage'
 import FilterByLocationPosts from '../components/FilterByLocationPosts'
 
-const API_URL = "http://localhost:5005"
+const API_URL = import.meta.env.VITE_API_URL
 function HomePage(props) {
 
   const [post, setPost] = useState([])
